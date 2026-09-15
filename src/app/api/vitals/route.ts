@@ -33,8 +33,9 @@ export async function POST(req: NextRequest) {
       include: { patient: true, kiosk: true },
     });
 
-    const aiUrl = process.env.NEXT_PUBLIC_AI_API_URL ?? "http://localhost:8000";
-    fetch(`${aiUrl}/api/vitals`, {
+    const aiUrl = process.env.AI_API_URL ?? process.env.NEXT_PUBLIC_AI_API_URL;
+    if (aiUrl && !aiUrl.includes("vercel.app") && !aiUrl.includes("localhost:3000")) {
+    fetch(`${aiUrl.replace(/\/$/, "")}/api/vitals`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -46,6 +47,7 @@ export async function POST(req: NextRequest) {
         temperature: data.temperature,
       }),
     }).catch(() => {});
+    }
 
     return NextResponse.json({ ok: true, vital }, { status: 201 });
   } catch (err: unknown) {

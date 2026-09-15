@@ -25,7 +25,7 @@ class SessionManager(context: Context) {
     private const val KEY_SERVER_URL = "server_url"
     private const val KEY_CACHED_PATIENT = "cached_patient"
     private const val KEY_DEMO_MODE = "demo_mode"
-    const val DEFAULT_SERVER_URL = "http://10.0.2.2:3000/"
+    const val DEFAULT_SERVER_URL = "https://medathon-ten.vercel.app/"
   }
 
   var isLoggedIn: Boolean

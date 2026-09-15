@@ -1,7 +1,7 @@
 services/
 hardware/
 mobile/
-app/
+android-app/
 gradle/
 patient dataset/
 aadhaar id dataset/

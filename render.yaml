@@ -1,0 +1,15 @@
+# One-click deploy for MEDATHON FastAPI (WebSocket vitals + AI)
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: medathon-ai-api
+    runtime: python
+    rootDir: services/ai-api
+    buildCommand: pip install -r requirements-prod.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://medathon-ten.vercel.app,http://localhost:3000
+      - key: PYTHON_VERSION
+        value: "3.12"

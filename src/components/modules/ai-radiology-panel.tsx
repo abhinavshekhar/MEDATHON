@@ -24,7 +24,9 @@ export function AiRadiologyPanel() {
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [patientId, setPatientId] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
-  const aiUrl = process.env.NEXT_PUBLIC_AI_API_URL ?? "http://localhost:8000";
+  const aiUrl =
+    process.env.NEXT_PUBLIC_AI_API_URL?.replace(/\/$/, "") ||
+    (typeof window !== "undefined" ? window.location.origin : "http://localhost:3000");
 
   async function runAnalysis() {
     setLoading(true);
@@ -39,7 +41,7 @@ export function AiRadiologyPanel() {
           image_url: preview ?? "inline-upload",
         }),
       });
-      if (!res.ok) throw new Error("AI service unavailable — start services/ai-api on port 8000");
+      if (!res.ok) throw new Error("AI radiology service unavailable");
       const data = await res.json();
       setResult(data);
       setAnalyzed(true);

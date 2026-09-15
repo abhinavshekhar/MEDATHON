@@ -12,12 +12,26 @@ Run: uvicorn main:app --reload --port 8000
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timezone
 from typing import Any
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+
+_DEFAULT_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://medathon-ten.vercel.app",
+    "https://medathon-abhinavshekharofficial-1386s-projects.vercel.app",
+]
+
+def _allowed_origins() -> list[str]:
+    raw = os.getenv("ALLOWED_ORIGINS", "")
+    if raw.strip():
+        return [o.strip() for o in raw.split(",") if o.strip()]
+    return _DEFAULT_ORIGINS
 
 app = FastAPI(
     title="MEDATHON AI & IoT API",
@@ -27,12 +41,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=_allowed_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # In-memory store for dev; replace with PostgreSQL via Prisma/HTTP in production
 _vitals_buffer: list[dict[str, Any]] = []
 _ws_clients: set[WebSocket] = set()
