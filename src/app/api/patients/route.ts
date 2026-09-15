@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { patientRegistrationSchema } from "@/lib/validations/patient";
 import { generatePatientNo, generateVisitId } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: NextRequest) {
   const q = req.nextUrl.searchParams.get("q")?.trim() ?? "";
 

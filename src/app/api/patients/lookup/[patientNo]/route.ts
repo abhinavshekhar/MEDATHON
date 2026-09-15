@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { formatPatientName } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(_: Request, { params }: { params: { patientNo: string } }) {
   const patientNo = decodeURIComponent(params.patientNo);
 

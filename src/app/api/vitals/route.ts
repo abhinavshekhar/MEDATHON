@@ -11,6 +11,8 @@ const schema = z.object({
   temperature: z.number(),
 });
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: NextRequest) {
   try {
     const data = schema.parse(await req.json());
