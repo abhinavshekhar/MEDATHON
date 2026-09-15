@@ -30,3 +30,5 @@ tsconfig.tsbuildinfo
 # OS / temp
 *.tmp
 *.swp
+.vercel
+.env*
