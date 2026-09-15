@@ -1,6 +1,8 @@
 import Link from "next/link";
 import {
+  AlertTriangle,
   ArrowRight,
+  Brain,
   FileScan,
   HeartPulse,
   Languages,
@@ -206,6 +208,57 @@ export function LandingPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section id="ml" className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="max-w-2xl">
+            <p className="eyebrow">ML pipeline</p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+              On-device clinical intelligence at the kiosk
+            </h2>
+            <p className="mt-4 text-slate-600 leading-relaxed">
+              MediKiosk runs a lightweight ML stack at intake — symptom classification, SOCRATES
+              probing, red-flag detection, and logistic triage scoring — before the physician
+              opens the chart.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Brain,
+                title: "Symptom classifier",
+                text: "Keyword-cluster NLP maps chief complaints to departments with confidence scores.",
+              },
+              {
+                icon: AlertTriangle,
+                title: "Red-flag engine",
+                text: "Pattern rules + vitals thresholds flag ACS, stroke, hypoxia, and psychiatric emergencies.",
+              },
+              {
+                icon: HeartPulse,
+                title: "Triage scorer",
+                text: "Logistic ensemble (TS + sklearn) produces routine / priority / emergency levels.",
+              },
+              {
+                icon: Stethoscope,
+                title: "Physician summary",
+                text: "Structured CC → HPI → ROS draft saved to the consultation record via Prisma.",
+              },
+            ].map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-card"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
