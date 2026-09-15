@@ -73,6 +73,24 @@ class NlpSummaryRequest(BaseModel):
     history_text: str
 
 
+class IntakeTriageRequest(BaseModel):
+    cluster: str = "metabolic"
+    red_flags: list[dict[str, Any]] = Field(default_factory=list)
+    age_years: float | None = None
+    vitals: dict[str, float] | None = None
+    duration_hours: float | None = None
+    free_text: str | None = None
+
+
+class IntakeSummarizeRequest(BaseModel):
+    complaint: str
+    answers: list[dict[str, str]] = Field(default_factory=list)
+    free_text: str | None = None
+    patient_name: str = "Patient"
+    age_years: float | None = None
+    vitals: dict[str, float] | None = None
+
+
 @app.get("/health")
 def health():
     return {"status": "ok", "service": "medathon-ai-api"}
@@ -139,13 +157,57 @@ async def analyze_radiology(req: RadiologyRequest):
 
 @app.post("/api/ai/nlp/summarize")
 async def summarize_history(req: NlpSummaryRequest):
-    """Placeholder: Ollama Llama 3 visit summary."""
+    """Rule-based NLP summary mirroring MediKiosk TS pipeline."""
+    from intake_ml import summarize_intake
+
+    result = summarize_intake(
+        complaint="Reported via NLP endpoint",
+        answers=[],
+        free_text=req.history_text,
+        patient_name="Patient",
+        age_years=None,
+        vitals=None,
+    )
     return {
         "visit_id": req.visit_id,
-        "status": "pending",
-        "message": "NLP summary not yet implemented — wire Ollama here",
-        "summary": None,
+        "patient_id": req.patient_id,
+        "status": "completed",
+        "summary": result["physician_summary"],
+        "structured_history": result["structured_history"],
+        "triage": result["triage"],
+        "red_flags": result["red_flags"],
+        "model": result["model"],
     }
+
+
+@app.post("/api/ai/intake/triage")
+async def intake_triage(req: IntakeTriageRequest):
+    """sklearn logistic triage scorer mirroring MediKiosk TS logic."""
+    from intake_ml import score_triage
+
+    return score_triage(
+        cluster=req.cluster,
+        red_flags=req.red_flags,
+        age_years=req.age_years,
+        vitals=req.vitals,
+        duration_hours=req.duration_hours,
+        free_text=req.free_text,
+    )
+
+
+@app.post("/api/ai/intake/summarize")
+async def intake_summarize(req: IntakeSummarizeRequest):
+    """Structured history + physician summary from kiosk intake."""
+    from intake_ml import summarize_intake
+
+    return summarize_intake(
+        complaint=req.complaint,
+        answers=req.answers,
+        free_text=req.free_text,
+        patient_name=req.patient_name,
+        age_years=req.age_years,
+        vitals=req.vitals,
+    )
 
 
 async def _broadcast(message: dict):
