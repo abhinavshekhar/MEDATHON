@@ -15,7 +15,8 @@
 |-----|-----|
 | **Desktop HIMS** | https://medathon-ten.vercel.app |
 | **Patient mobile app** | https://medathon-ten.vercel.app/patient-app |
-| **Kiosk tablet (11″)** | https://medathon-ten.vercel.app/kiosk |
+| **Kiosk tablet (11″)** | https://medathon-kiosk.vercel.app *(standalone site)* |
+| **Kiosk (legacy redirect)** | https://medathon-ten.vercel.app/kiosk → redirects to kiosk site |
 | **Digital Twin** | https://medathon-ten.vercel.app/smart-clinic/digital-twin |
 | **AI Radiology** | https://medathon-ten.vercel.app/smart-clinic/radiology |
 | **Clinical Assistant (Chatbot)** | https://medathon-ten.vercel.app/smart-clinic/chatbot |

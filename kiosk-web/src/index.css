@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@keyframes scannerLaser {
+  0% {
+    top: 15%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 85%;
+    opacity: 1;
+  }
+  100% {
+    top: 15%;
+    opacity: 0.2;
+  }
+}
+
+/* Touch and kiosk lockdown optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+input {
+  user-select: text;
+}

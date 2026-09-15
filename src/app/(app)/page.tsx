@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, ClipboardPlus, HeartPulse, IdCard, ScanLine, Smartphone, UserPlus } from "lucide-react";
+import { ArrowRight, ClipboardPlus, ExternalLink, HeartPulse, IdCard, ScanLine, Smartphone, UserPlus } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { formatPatientName, formatDateTime } from "@/lib/utils";
+import { getKioskWebUrl } from "@/lib/kiosk-url";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { StatCard } from "@/components/ui/stat-card";
@@ -21,7 +22,7 @@ async function getDashboardData() {
 const ACTIONS = [
   { href: "/opd/registration", icon: UserPlus, title: "New registration", text: "Create an OPD patient record" },
   { href: "/patients", icon: ScanLine, title: "Find a patient", text: "Search records and visit history" },
-  { href: "/kiosk", icon: HeartPulse, title: "Kiosk tablet", text: "11″ reception vitals station" },
+  { href: getKioskWebUrl(), icon: HeartPulse, title: "Kiosk tablet", text: "Separate reception vitals website", external: true },
   { href: "/patient-app", icon: Smartphone, title: "Patient mobile app", text: "Self registration & ABDM QR" },
   { href: "/smart-clinic/digital-twin", icon: HeartPulse, title: "Digital Twin", text: "Desktop vitals monitor" },
   { href: "/smart-clinic/id-scanner", icon: IdCard, title: "Aadhaar ID PDF", text: "Create ID cards with QR" },
@@ -47,7 +48,17 @@ export default async function DashboardPage() {
       <Card title="OPD queue" description="Most recent clinical registrations">
         {data.recentVisits.length ? <div className="divide-y divide-slate-100">{data.recentVisits.map((visit) => <Link key={visit.id} href={`/patients/${visit.patient.id}`} className="group flex items-center gap-3 py-3 first:pt-0 last:pb-0"><div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-xs font-bold text-brand-700">{formatPatientName(visit.patient).slice(0, 1)}</div><div className="min-w-0 flex-1"><p className="truncate text-sm font-medium text-slate-800">{formatPatientName(visit.patient)}</p><p className="truncate text-xs text-slate-500">{visit.opdType} · {visit.doctorName || "Doctor pending"}</p></div><div className="hidden text-right sm:block"><p className="font-mono text-[10px] text-slate-500">{visit.visitId}</p><p className="mt-1 text-[11px] text-slate-400">{formatDateTime(visit.visitDate)}</p></div><Badge variant={visit.status === "COMPLETED" ? "success" : "warning"}>{visit.status === "REGISTERED" ? "Waiting" : visit.status}</Badge></Link>)}</div> : <EmptyQueue />}
       </Card>
-      <Card title="Quick actions" description="Frequently used workflows"><div className="space-y-2">{ACTIONS.map((action) => <Link key={action.href} href={action.href} className="group flex items-center gap-3 rounded-xl border border-slate-100 p-3 transition hover:border-brand-200 hover:bg-brand-50/40"><div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 group-hover:bg-brand-100 group-hover:text-brand-700"><action.icon className="h-4 w-4" /></div><div className="flex-1"><p className="text-sm font-medium text-slate-800">{action.title}</p><p className="text-xs text-slate-500">{action.text}</p></div><ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-brand-600" /></Link>)}</div></Card>
+      <Card title="Quick actions" description="Frequently used workflows"><div className="space-y-2">{ACTIONS.map((action) => {
+        const inner = <>
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 group-hover:bg-brand-100 group-hover:text-brand-700"><action.icon className="h-4 w-4" /></div>
+          <div className="flex-1"><p className="text-sm font-medium text-slate-800">{action.title}</p><p className="text-xs text-slate-500">{action.text}</p></div>
+          {"external" in action && action.external ? <ExternalLink className="h-4 w-4 text-slate-300 group-hover:text-brand-600" /> : <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-brand-600" />}
+        </>;
+        const cls = "group flex items-center gap-3 rounded-xl border border-slate-100 p-3 transition hover:border-brand-200 hover:bg-brand-50/40";
+        return "external" in action && action.external
+          ? <a key={action.href} href={action.href} target="_blank" rel="noreferrer" className={cls}>{inner}</a>
+          : <Link key={action.href} href={action.href} className={cls}>{inner}</Link>;
+      })}</div></Card>
     </div>
     <Card title="Recently registered" description="New patient records in chronological order">{data.recentPatients.length ? <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{data.recentPatients.map((patient) => <Link key={patient.id} href={`/patients/${patient.id}`} className="rounded-xl border border-slate-100 p-3 transition hover:border-brand-200 hover:bg-brand-50/30"><p className="truncate text-sm font-medium text-slate-800">{formatPatientName(patient)}</p><p className="mt-1 font-mono text-[10px] text-slate-500">{patient.patientNo}</p><p className="mt-2 text-xs text-slate-500">{patient.mobile || "No phone recorded"}</p></Link>)}</div> : <EmptyQueue />}</Card>
   </div>;
