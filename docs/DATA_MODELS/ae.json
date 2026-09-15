@@ -1,0 +1,36 @@
+{
+  "$schema": "Accident & Emergency module",
+  "entity": "AERegistration",
+  "extends": "Patient",
+  "additionalSections": {
+    "aeDetails": {
+      "fields": [
+        { "id": "idPatientAdmitDateTime", "label": "Admit Date/Time", "type": "datetime", "format": "DD-MM-YYYY HH:MM" },
+        { "id": "idAdmitWard", "label": "Ward", "type": "select" },
+        { "id": "idAdmitBed", "label": "Bed", "type": "select" },
+        { "id": "idAdmitBedFor", "label": "Bed For", "type": "select" }
+      ]
+    },
+    "mlcDetails": {
+      "fields": [
+        { "id": "idMedicoLegalType", "label": "Medico Legal Case Type", "type": "select", "options": [
+          "Road Traffic Accident", "Railway Accident", "Assault", "Burns",
+          "Poisoning", "Drowning", "Fall from Height", "Sexual Offences",
+          "Suicide Attempt", "Brought Dead", "Industrial Accident",
+          "Animal Bite", "Stab/Gunshot", "Domestic Violence", "Others"
+        ]},
+        { "id": "idMLCDocUpload", "label": "MLC Document Upload", "type": "file" },
+        { "id": "idMLCConsentTaken", "label": "Consent Taken", "type": "select", "options": ["Yes", "No"] },
+        { "id": "idMLCConsentUpload", "label": "Consent Upload", "type": "file" },
+        { "id": "idSpecialNotes", "label": "Special Notes", "type": "textarea" }
+      ]
+    }
+  },
+  "queues": {
+    "aeQueue": { "page": "/accidentEmergencyQueueNew.php" },
+    "observationStation": { "page": "/ipdObservationStation.php" },
+    "referredQueue": { "page": "/ipdReferredPatient.php" },
+    "deadPatientQueue": { "page": "/ipdBroughtDeadPatient.php" },
+    "dischargedQueue": { "page": "/dischargePatientQueueAE.php" }
+  }
+}

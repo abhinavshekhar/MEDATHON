@@ -1,0 +1,211 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  name      String
+  role      String   @default("DATA_ENTRY")
+  clinicId  Int?
+  clinic    Clinic?  @relation(fields: [clinicId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Clinic {
+  id       Int     @id @default(autoincrement())
+  name     String
+  hfrId    String? @unique
+  district String?
+  block    String?
+  users    User[]
+  visits   OPDVisit[]
+  kiosks   KioskDevice[]
+}
+
+model Patient {
+  id               String    @id @default(cuid())
+  patientNo        String    @unique
+  firstName        String
+  middleName       String?
+  lastName         String?
+  ageYears         Int?
+  ageMonths        Int?
+  ageDays          Int?
+  dateOfBirth      DateTime?
+  gender           String
+  maritalStatus    String?
+  fatherSpouseName String?
+  ashaWorker       String?
+  bloodGroup       String?
+  religionCaste    String?
+  category         String?
+  email            String?
+  mobile           String?
+  aadhaarNo        String?
+  epicNo           String?
+  abhaAddress      String?
+  isDead           Boolean   @default(false)
+  country          String?   @default("India")
+  state            String?
+  district         String?
+  block            String?
+  ward             String?
+  village          String?
+  panchayat        String?
+  postOffice       String?
+  policeStation    String?
+  pinCode          String?
+  address          String?
+  schemePMJAY      Boolean @default(false)
+  schemeRBSK       Boolean @default(false)
+  schemeNCBCBAC    Boolean @default(false)
+  schemeHBNC       Boolean @default(false)
+  schemeBPL        Boolean @default(false)
+  schemePMSMA      Boolean @default(false)
+  schemeFPOT       Boolean @default(false)
+  schemeFP         Boolean @default(false)
+  schemeHBYC       Boolean @default(false)
+  schemeOthers     Boolean @default(false)
+  visits           OPDVisit[]
+  labOrders        LabOrder[]
+  prescriptions    Prescription[]
+  vitalLogs        VitalLog[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model OPDVisit {
+  id               String        @id @default(cuid())
+  visitId          String        @unique
+  patientId        String
+  patient          Patient       @relation(fields: [patientId], references: [id])
+  clinicId         Int
+  clinic           Clinic        @relation(fields: [clinicId], references: [id])
+  opdType          String
+  modalityType     String?
+  doctorId         Int?
+  doctorName       String?
+  roomNo           String?
+  referredBy       String
+  reason           String
+  feeAmount        Float         @default(0)
+  paymentCollected Boolean       @default(false)
+  status           String        @default("REGISTERED")
+  isMLC            Boolean       @default(false)
+  mlcDetails       MLCDetails?
+  consultation     Consultation?
+  vitalLogs        VitalLog[]
+  visitDate        DateTime      @default(now())
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+}
+
+model MLCDetails {
+  id               String   @id @default(cuid())
+  visitId          String   @unique
+  visit            OPDVisit @relation(fields: [visitId], references: [id])
+  mlcNo            String?
+  policeStation    String?
+  psiConstable     String?
+  firDate          DateTime?
+  incidentDateTime DateTime?
+  mrdRegNo         String?
+  caseType         String?
+  consentTaken     Boolean  @default(false)
+  specialNotes     String?
+}
+
+model Prescription {
+  id          String             @id @default(cuid())
+  patientId   String
+  patient     Patient            @relation(fields: [patientId], references: [id])
+  visitId     String?
+  doctorName  String?
+  status      String             @default("PENDING")
+  items       PrescriptionItem[]
+  dispensedAt DateTime?
+  createdAt   DateTime           @default(now())
+}
+
+model PrescriptionItem {
+  id                 String       @id @default(cuid())
+  prescriptionId     String
+  prescription       Prescription @relation(fields: [prescriptionId], references: [id])
+  medicineName       String
+  dosage             String?
+  frequency          String?
+  duration           String?
+  quantityPrescribed Int
+  quantityDispensed  Int          @default(0)
+}
+
+model LabOrder {
+  id           String          @id @default(cuid())
+  patientId    String
+  patient      Patient         @relation(fields: [patientId], references: [id])
+  visitId      String?
+  priority     String          @default("ROUTINE")
+  status       String          @default("ORDERED")
+  tests        LabTestResult[]
+  orderedAt    DateTime        @default(now())
+  verifiedAt   DateTime?
+  dispatchedAt DateTime?
+}
+
+model LabTestResult {
+  id          String   @id @default(cuid())
+  orderId     String
+  order       LabOrder @relation(fields: [orderId], references: [id])
+  testName    String
+  testCode    String?
+  result      String?
+  normalRange String?
+  unit        String?
+  isAbnormal  Boolean  @default(false)
+}
+
+model KioskDevice {
+  id        String     @id @default(cuid())
+  deviceId  String     @unique
+  name      String
+  clinicId  Int
+  clinic    Clinic     @relation(fields: [clinicId], references: [id])
+  isOnline  Boolean    @default(false)
+  lastSeen  DateTime?
+  vitalLogs VitalLog[]
+  createdAt DateTime   @default(now())
+}
+
+model VitalLog {
+  id          String       @id @default(cuid())
+  patientId   String
+  patient     Patient      @relation(fields: [patientId], references: [id])
+  visitId     String?
+  visit       OPDVisit?    @relation(fields: [visitId], references: [id])
+  kioskId     String?
+  kiosk       KioskDevice? @relation(fields: [kioskId], references: [id])
+  bpm         Float?
+  spo2        Float?
+  temperature Float?
+  recordedAt  DateTime     @default(now())
+}
+
+model Consultation {
+  id           String   @id @default(cuid())
+  visitId      String   @unique
+  visit        OPDVisit @relation(fields: [visitId], references: [id])
+  aiSummary    String?
+  radiologyUrl String?
+  aiHeatmapUrl String?
+  diagnosis    String?
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

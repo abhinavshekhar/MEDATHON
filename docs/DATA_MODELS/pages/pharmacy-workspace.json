@@ -1,0 +1,68 @@
+{
+  "title": "Pharmacy Workspace",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/pharmacyQueue.php",
+  "legacyPath": "/pharmacyQueue.php",
+  "headings": [
+    "Queue: Pharmacy Workspace",
+    "Loading",
+    "No Patients for Selected Criteria",
+    "Filters",
+    "Dispensed Status",
+    "Doctors / Teams"
+  ],
+  "searchFields": [
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "id": "idFilterPatientName",
+      "label": "Search with Patient Name, No, Visit No, Token No",
+      "placeholder": "Search with Patient Name, No, Visit No, Token No",
+      "required": false,
+      "options": []
+    }
+  ],
+  "formFields": [
+    {
+      "id": "idQueueDate",
+      "label": "Please select date",
+      "type": "text",
+      "tag": "input",
+      "required": true,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    }
+  ],
+  "tables": [
+    {
+      "id": "",
+      "headers": [
+        "Token No",
+        "Patient",
+        "Study",
+        "Doctor",
+        "Time",
+        "Drug Count",
+        "Dispensed Status",
+        "Action"
+      ]
+    }
+  ],
+  "fieldCount": 4,
+  "tableCount": 1
+}

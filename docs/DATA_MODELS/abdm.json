@@ -1,0 +1,34 @@
+{
+  "$schema": "ABDM/ABHA integration module",
+  "entity": "ABDMProfile",
+  "page": "/abdmProfile.php",
+  "sections": {
+    "sharedProfiles": {
+      "tableId": "idNDHBShareProfileListPage",
+      "columns": [
+        "Sr No.", "Name", "ABHA Address", "ABHA ID", "Gender",
+        "Date Of Birth", "Mobile No", "Scanned Time", "Counter No",
+        "Token No", "Match In System", "Actions"
+      ]
+    },
+    "linkABHA": {
+      "fields": [
+        { "id": "idhealthIDToLink", "label": "Patient ABHA ID", "type": "text" },
+        { "id": "NDHB-auth-mode", "label": "Auth Mode", "type": "select" },
+        { "id": "NDHM-auth-otp-box", "label": "OTP", "type": "text" },
+        { "id": "keyword", "label": "Search By Keyword", "type": "email" },
+        { "id": "idCounterNumber", "label": "Search By Counter Number", "type": "text" }
+      ]
+    },
+    "abhaLinks": {
+      "columns": ["#", "ABHA ID", "Linked On", "Linked By"]
+    }
+  },
+  "apiEndpoints": [
+    "api/ndhb/v3/health-ids/profile/account/abha/search",
+    "api/ndhb/v3/health-ids/profile/login/request/otp",
+    "api/ndhb/v3/health-ids/profile/login/verify",
+    "api/ndhb/v3/patients/",
+    "apiv2/patient-abha"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "MEDATHON Kiosk",
+  "description": "11-inch reception tablet kiosk app for MEDATHON Urban Health Centre Chennai — captures patient identity via ABDM QR, calculates clinical vitals, and syncs instantly to Digital Twin.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "generatedFrom": "scripts\\extraction_output_utf8.json",
+  "pages": [
+    {
+      "slug": "patient-records",
+      "title": "Patient Records",
+      "file": "pages/patient-records.json",
+      "fieldCount": 1,
+      "tableCount": 1
+    },
+    {
+      "slug": "mch-registration",
+      "title": "MCH Patient Registration",
+      "file": "pages/mch-registration.json",
+      "fieldCount": 55,
+      "tableCount": 9
+    },
+    {
+      "slug": "pharmacy-workspace",
+      "title": "Pharmacy Workspace",
+      "file": "pages/pharmacy-workspace.json",
+      "fieldCount": 4,
+      "tableCount": 1
+    },
+    {
+      "slug": "lab-workspace",
+      "title": "Lab Workspace",
+      "file": "pages/lab-workspace.json",
+      "fieldCount": 33,
+      "tableCount": 5
+    },
+    {
+      "slug": "mis-dashboard",
+      "title": "MIS Reports",
+      "file": "pages/mis-dashboard.json",
+      "fieldCount": 0,
+      "tableCount": 0
+    },
+    {
+      "slug": "ae-registration",
+      "title": "A & E Patient Registration",
+      "file": "pages/ae-registration.json",
+      "fieldCount": 53,
+      "tableCount": 8
+    },
+    {
+      "slug": "drug-dispense",
+      "title": "Drug Dispense",
+      "file": "pages/drug-dispense.json",
+      "fieldCount": 41,
+      "tableCount": 6
+    },
+    {
+      "slug": "pathology-registration",
+      "title": "Pathology Patient Registration",
+      "file": "pages/pathology-registration.json",
+      "fieldCount": 59,
+      "tableCount": 9
+    },
+    {
+      "slug": "abdm-profile",
+      "title": "ABDM Profile",
+      "file": "pages/abdm-profile.json",
+      "fieldCount": 9,
+      "tableCount": 3
+    },
+    {
+      "slug": "roster-management",
+      "title": "Roster Management",
+      "file": "pages/roster-management.json",
+      "fieldCount": 3,
+      "tableCount": 1
+    }
+  ]
+}

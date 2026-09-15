@@ -1,0 +1,6 @@
+{
+  "name": "MEDATHON",
+  "description": "Smart Healthcare patient mobile app for MEDATHON in Chennai, Tamil Nadu. Features ABDM Health Card QR, kiosk vitals sync, self-registration, appointments, and clinical records.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

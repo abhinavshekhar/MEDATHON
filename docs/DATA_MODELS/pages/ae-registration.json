@@ -1,0 +1,573 @@
+{
+  "title": "A & E Patient Registration",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/AEPatientRegistration.php",
+  "legacyPath": "/AEPatientRegistration.php",
+  "headings": [
+    "Patient Details",
+    "Address",
+    "Communications",
+    "A&E Details",
+    "Wards",
+    "Beds",
+    "MLC Details",
+    "Possible Duplicate Patients Found",
+    "Link ABHA",
+    "Create ABHA",
+    "Existing ABHA found!",
+    "Existing ABHA Found with Aadhaar!",
+    "Today's Registrations",
+    "No Patients Registered Today.",
+    "OPD Recommendation",
+    "Cancellation Reason",
+    "Registration Successful",
+    "MLC Details",
+    "Keyboard Shortcuts"
+  ],
+  "searchFields": [
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "id": "idPatientSearch",
+      "label": "Search with Patient Name, No, Mobile, Email...",
+      "placeholder": "Search with Patient Name, No, Mobile, Email...",
+      "required": false,
+      "options": []
+    }
+  ],
+  "formFields": [
+    {
+      "id": "idPatientABHAAddress",
+      "label": "Enter ABHA Address",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientFirstName",
+      "label": "First Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientMiddleName",
+      "label": "Middle Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientLastName",
+      "label": "Last Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientAgeY",
+      "label": "idPatientAgeY",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientAgeM",
+      "label": "idPatientAgeM",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientAgeD",
+      "label": "idPatientAgeD",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientDOB",
+      "label": "DD-MM-YYYY",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientGender",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select",
+        "Male",
+        "Female",
+        "Transgender"
+      ]
+    },
+    {
+      "id": "idPatientMaritalStatus",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select",
+        "Single",
+        "Married",
+        "Divorced",
+        "Separated",
+        "Widow",
+        "Widower"
+      ]
+    },
+    {
+      "id": "idPatientFatherName",
+      "label": "Father / Spouse Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientAdmitDateTime",
+      "label": "DD-MM-YYYY HH:MM",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientBloodGroup",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select",
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "O+",
+        "O-",
+        "AB+",
+        "AB-"
+      ]
+    },
+    {
+      "id": "idPatientReligionCaste",
+      "label": "Religion / Caste",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientCategory",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select",
+        "General",
+        "OBC",
+        "EBC",
+        "SC",
+        "ST"
+      ]
+    },
+    {
+      "id": "idPatientCountry",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientState",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientDistrict",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientBlock",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select Any"
+      ]
+    },
+    {
+      "id": "idPatientWard",
+      "label": "Ward",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientVillage",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select Any"
+      ]
+    },
+    {
+      "id": "idPatientPanchayat",
+      "label": "title",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select Any"
+      ]
+    },
+    {
+      "id": "idPatientPostOffice",
+      "label": "Post Office",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientPoliceStation",
+      "label": "Police Station",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientPinCode",
+      "label": "Pin Code",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientAddress",
+      "label": "Address",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "patientPhoto",
+      "label": "patientPhoto",
+      "type": "file",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientEmail",
+      "label": "Email",
+      "type": "email",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientMobile",
+      "label": "Mobile",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idIsMLCAppointment",
+      "label": "idIsMLCAppointment",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idClinic",
+      "label": "idClinic",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idModalityType_0",
+      "label": "ServiceTypeID[]",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idOPDType_0",
+      "label": "idOPDType",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idStaff_0",
+      "label": "staffID[]",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idFeeStructure",
+      "label": "feeStructure",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idReason",
+      "label": "Reason",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idMlcNo",
+      "label": "idMlcNo",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPoliceStationName",
+      "label": "idPoliceStationName",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPsiConstableName",
+      "label": "idPsiConstableName",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "DD-MM-YYYY",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDatetime",
+      "label": "DD-MM-YYYY HH:MM",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idMrdMldRegistrationDate",
+      "label": "idMrdMldRegistrationDate",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idMedicoLegalType",
+      "label": "idMedicoLegalType",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select Type of Medico legal case",
+        "Injuries due to Accidents and Assault",
+        "Suspected or evident cases of suicides or homicides (even attempted cases). Confirmed or suspected cases of poisoning. Burns",
+        "Cases of injuries with a likelihood of death",
+        "Sexual Offences",
+        "Suspected or evident criminal abortion",
+        "All patients brought to the hospital in suspicious circumstances or with an improper history (ex: found dead on the road)",
+        "Unconscious patients whose cause of unconsciousness is not clear",
+        "Child Abuse",
+        "Domestic Violence",
+        "Person under Police Custody or Judicial Custody",
+        "Patients dying suddenly on the operating table or after parenteral administration of a drug or medication",
+        "Case of Drunkenness",
+        "Brought Dead",
+        "Natural Disaster"
+      ]
+    },
+    {
+      "id": "idMLCDocUpload",
+      "label": "idMLCDocUpload",
+      "type": "file",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idMLCConsentTaken",
+      "label": "idMLCConsentTaken",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select Any",
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "idMLCConsentUpload",
+      "label": "idMLCConsentUpload",
+      "type": "file",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idSpecialNotes",
+      "label": "specialnote",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idhealthIDToLink",
+      "label": "Patient ABHA ID",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode",
+      "label": "NDHB-auth-mode",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select"
+      ]
+    },
+    {
+      "id": "NDHM-auth-otp-box",
+      "label": "Enter OTP",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-name",
+      "label": "Enter NDHB registered name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+      "label": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Male",
+        "Female",
+        "Other",
+        "Unknown"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "id": "idNDHBPatientHealthIDToLinkList",
+      "headers": [
+        "#",
+        "ABHA ID",
+        "Linked On",
+        "Linked By"
+      ]
+    },
+    {
+      "id": "",
+      "headers": []
+    },
+    {
+      "id": "",
+      "headers": [
+        "Time",
+        "Patient",
+        "Doctor",
+        "Action"
+      ]
+    },
+    {
+      "id": "idTableRecommendation",
+      "headers": [
+        "Sr. No.",
+        "Patient",
+        "Study",
+        "Recommendation In",
+        "Rec. By",
+        "Status",
+        "Action"
+      ]
+    },
+    {
+      "id": "",
+      "headers": []
+    },
+    {
+      "id": "",
+      "headers": []
+    },
+    {
+      "id": "",
+      "headers": []
+    },
+    {
+      "id": "",
+      "headers": []
+    }
+  ],
+  "fieldCount": 53,
+  "tableCount": 8
+}

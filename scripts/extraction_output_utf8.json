@@ -1,0 +1,4499 @@
+[
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/PatientRecords.php",
+    "title": "Patient Records",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Search Patient",
+      "Patient List"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "_csrf_token",
+        "id": "",
+        "label": "_csrf_token",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientSearch",
+        "label": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+        "placeholder": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+        "required": false,
+        "options": []
+      }
+    ],
+    "tables": [
+      {
+        "id": "idSearchPatientTable",
+        "headers": [
+          "Sr. No.",
+          "Patient Name",
+          "Gender",
+          "Age",
+          "Contact",
+          "Primary Clinic",
+          "Record"
+        ]
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/MCHPatientRegistration.php",
+    "title": "MCH Patient Registration",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Patient Details",
+      "Address",
+      "Communications",
+      "OPD Details",
+      "Payment\n                            Renewal",
+      "Identification",
+      "Schemes",
+      "MLC Details",
+      "Possible Duplicate Patients Found",
+      "Search Referred-In Patients",
+      "Link ABHA",
+      "Create ABHA",
+      "Existing ABHA found!",
+      "Existing ABHA Found with Aadhaar!",
+      "Today's Registrations",
+      "No Patients Registered Today.",
+      "Roster of The Day / 06-09-2026",
+      "APHC Mordiva Samastipur HFR: IN1010007274",
+      "Shifts",
+      "OPD Recommendation",
+      "Cancellation Reason",
+      "Registration Successful",
+      "Keyboard Shortcuts"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientSearch",
+        "label": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+        "placeholder": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHealthIDNumber",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientABHAAddress",
+        "label": "Enter ABHA Address",
+        "placeholder": "Enter ABHA Address",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAAddressforPatient",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHARequestID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAClinicID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAAccessToken",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idIsExistingABHA",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "iIsNewHealthID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "sProfileShareIDHidden",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientDeadStatus",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "iPatientNo",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientDistrict",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientCountry",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientState",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientBlock",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientPanchayat",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientVillage",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientFirstName",
+        "label": "First Name",
+        "placeholder": "First Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientMiddleName",
+        "label": "Middle Name",
+        "placeholder": "Middle Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientLastName",
+        "label": "Last Name",
+        "placeholder": "Last Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeY",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeM",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeD",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatAgeInTotalDays",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientDOB",
+        "label": "DD-MM-YYYY",
+        "placeholder": "DD-MM-YYYY",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientGender",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Male",
+          "Female",
+          "Transgender"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientMaritalStatus",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Single",
+          "Married",
+          "Divorced",
+          "Separated",
+          "Widow",
+          "Widower"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientFatherName",
+        "label": "Father / Spouse Name",
+        "placeholder": "Father / Spouse Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientANMOLAshaWorker",
+        "label": "ASHA Worker",
+        "placeholder": "ASHA Worker",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientBloodGroup",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "A+",
+          "A-",
+          "B+",
+          "B-",
+          "O+",
+          "O-",
+          "AB+",
+          "AB-"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientReligionCaste",
+        "label": "Religion / Caste",
+        "placeholder": "Religion / Caste",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientCategory",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "General",
+          "OBC",
+          "EBC",
+          "SC",
+          "ST"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientCountry",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientState",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientDistrict",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientBlock",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientWard",
+        "label": "Ward",
+        "placeholder": "Ward",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientVillage",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientPanchayat",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPostOffice",
+        "label": "Post Office",
+        "placeholder": "Post Office",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPoliceStation",
+        "label": "Police Station",
+        "placeholder": "Police Station",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPinCode",
+        "label": "Pin Code",
+        "placeholder": "Pin Code",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientAddress",
+        "label": "Address",
+        "placeholder": "Address",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "saveNewImage",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "patientPhoto",
+        "id": "patientPhoto",
+        "label": "patientPhoto",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "",
+        "id": "idPatientEmail",
+        "label": "Email",
+        "placeholder": "Email",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientMobile",
+        "label": "Mobile",
+        "placeholder": "Mobile",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientScanProfileMobile",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "idIsMLCAppointment",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idClinic",
+        "id": "idClinic",
+        "label": "idClinic",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "ServiceTypeID[]",
+        "id": "idModalityType_0",
+        "label": "ServiceTypeID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idOPDType",
+        "id": "idOPDType_0",
+        "label": "idOPDType",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idSampleCountValue",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "staffID[]",
+        "id": "idStaff_0",
+        "label": "staffID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "feeStructure",
+        "id": "idFeeStructure",
+        "label": "feeStructure",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idChannelTypeId",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "room_no",
+        "id": "idRoomNo",
+        "label": "room_no",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "recommendedStaffID",
+        "id": "idRecommendedStaff",
+        "label": "recommendedStaffID",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "textarea",
+        "name": "",
+        "id": "idReason",
+        "label": "Reason",
+        "placeholder": "Reason",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "idOPDBillPaymentCollected",
+        "label": "I have collected payment.",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idNetAmount",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOPDBillAmount",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOPDBillIsRenewal",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idAadhaarNo",
+        "label": "Aadhaar No",
+        "placeholder": "Aadhaar No",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idEpicNo",
+        "label": "EPIC No / Voter ID",
+        "placeholder": "EPIC No / Voter ID",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesPMJAY",
+        "label": "PMJAY",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesRBSK",
+        "label": "RBSK",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesNCDCBAC",
+        "label": "NCD/CBAC",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesHBNC",
+        "label": "HBNC",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesBPL",
+        "label": "BPL",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesPMSMA",
+        "label": "PMSMA",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesFPOT",
+        "label": "FPOT",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesFP",
+        "label": "FP",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesHBYC",
+        "label": "HBYC",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesOthers",
+        "label": "Others",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idMlcNo",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPoliceStationName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPsiConstableName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      }
+    ],
+    "tables": [
+      {
+        "id": "",
+        "headers": [
+          "Sr. No.",
+          "Name",
+          "Patient No",
+          "ABHA IDs",
+          "Mobile",
+          "Age",
+          "Gender",
+          "District",
+          "Block",
+          "Action"
+        ]
+      },
+      {
+        "id": "idNDHBPatientHealthIDToLinkList",
+        "headers": [
+          "#",
+          "ABHA ID",
+          "Linked On",
+          "Linked By"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": [
+          "Token No",
+          "Time",
+          "Patient",
+          "OPD Type (Modality)",
+          "Doctor",
+          "Payment",
+          "Actions"
+        ]
+      },
+      {
+        "id": "",
+        "headers": [
+          "Sr. No",
+          "Doctors"
+        ]
+      },
+      {
+        "id": "idTableRecommendation",
+        "headers": [
+          "Sr. No.",
+          "Patient",
+          "Study",
+          "Recommendation In",
+          "Rec. By",
+          "Status",
+          "Action"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": []
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/pharmacyQueue.php",
+    "title": "Pharmacy Workspace",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Queue: Pharmacy Workspace",
+      "Loading",
+      "No Patients for Selected Criteria",
+      "Filters",
+      "Dispensed Status",
+      "Doctors / Teams"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idQueueDate",
+        "label": "Please select date",
+        "placeholder": "Please select date",
+        "required": true,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idFilterPatientName",
+        "label": "Search with Patient Name, No, Visit No, Token No",
+        "placeholder": "Search with Patient Name, No, Visit No, Token No",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      }
+    ],
+    "tables": [
+      {
+        "id": "",
+        "headers": [
+          "Token No",
+          "Patient",
+          "Study",
+          "Doctor",
+          "Time",
+          "Drug Count",
+          "Dispensed Status",
+          "Action"
+        ]
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/labQueue.php",
+    "title": "Lab Workspace",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Queue: Lab Workspace",
+      "Loading",
+      "No Patients for Selected Criteria",
+      "Filters",
+      "Sample Status",
+      "Referring Doctor",
+      "Modality",
+      "Overdue",
+      "Sample Collection",
+      "Collection Remarks",
+      "Sample Accession",
+      "Accession Note",
+      "Accession",
+      "Lab Recommendation",
+      "Cancellation Reason",
+      "Reject Remark",
+      "Remark",
+      "Link ABHA",
+      "Attachments",
+      "/\n                                     Male\n                                     Female\n                                    \n                                     Transgender",
+      "Attachments"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idQueueDate",
+        "label": "Please select date",
+        "placeholder": "Please select date",
+        "required": true,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "label": "Patient Name / Patient No. / Barcode / Visit ID",
+        "placeholder": "Patient Name / Patient No. / Barcode / Visit ID",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iPrescreeningPatientID",
+        "id": "",
+        "label": "iPrescreeningPatientID",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "_csrf_token",
+        "id": "",
+        "label": "_csrf_token",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "sSampleRemarks",
+        "id": "idSampleRemarks",
+        "label": "Enter Sample Collection Remarks",
+        "placeholder": "Enter Sample Collection Remarks",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "selectedCollectionRequestID[]",
+        "id": "",
+        "label": "selectedCollectionRequestID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "collectedAtTypes[]",
+        "id": "",
+        "label": "collectedAtTypes[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "collectionDate[]",
+        "id": "",
+        "label": "Date",
+        "placeholder": "Date",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "sampleBarcode[]",
+        "id": "",
+        "label": "Barcode",
+        "placeholder": "Barcode",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iCollectionRequestID[]",
+        "id": "",
+        "label": "iCollectionRequestID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "sampleLabel[]",
+        "id": "",
+        "label": "sampleLabel[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "serviceID[]",
+        "id": "",
+        "label": "serviceID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "sampleID[]",
+        "id": "",
+        "label": "sampleID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iPatientID[]",
+        "id": "",
+        "label": "iPatientID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iScheduleID[]",
+        "id": "",
+        "label": "iScheduleID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iScheduleApptID[]",
+        "id": "",
+        "label": "iScheduleApptID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "collectionTime[]",
+        "id": "",
+        "label": "Time",
+        "placeholder": "Time",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "collectedBy[]",
+        "id": "",
+        "label": "collectedBy[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "collectedAt[]",
+        "id": "",
+        "label": "collectedAt[]",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "APHC BIRPUR, KANTI",
+          "APHC DHAMAAULI RAMNATH, KANTI",
+          "APHC LASHGARIPUR, KANTI",
+          "APHC PANAPUR HAWELI, KANTI",
+          "APHC PANAPUR KARIYAT, KANTI",
+          "APHC BERAI, KATRA",
+          "APHC PAHSAUL, KATRA",
+          "APHC JAJUAR, KATRA",
+          "APHC JAMALABAD, MUSHARI",
+          "APHC MADANPUR CHAUBE, MUSHARI",
+          "APHC PAKRI ISMAIL, MUSHARI",
+          "APHC SHEIKHPURA, MUSHARI",
+          "APHC SHERPUR MUSHARI",
+          "APHC CHAJAN GONU CHOWK, KUDHANI",
+          "APHC CHANDRAHATTI, KUDHANI",
+          "APHC FATEHPUR, KUDHANI",
+          "APHC KERMAH CHOWK, KUDHANI",
+          "APHC KHARAUNA DIH, KUDHANI",
+          "APHC MANIYARI,KUDHANI",
+          "APHC SONBARSA SHAH, KUDHANI"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iPrescreeningPatientID",
+        "id": "",
+        "label": "iPrescreeningPatientID",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "_csrf_token",
+        "id": "",
+        "label": "_csrf_token",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "sAccessionRemarks",
+        "id": "idAccessionRemarks",
+        "label": "Enter Accession Note",
+        "placeholder": "Enter Accession Note",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "iCollectionRequestID[]",
+        "id": "",
+        "label": "iCollectionRequestID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "collectedAtTypes[]",
+        "id": "",
+        "label": "collectedAtTypes[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientSearch",
+        "label": "Search with Name, ID, Mobile, Email...",
+        "placeholder": "Search with Name, ID, Mobile, Email...",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idselectDate",
+        "label": "Please select date",
+        "placeholder": "Please select date",
+        "required": true,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "idRecommendationStatus",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Pending",
+          "Scheduled",
+          "Cancelled"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "idClinicName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "idServiceTypeID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any",
+          "Pathology"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "idServiceID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idRecommendedIn",
+        "id": "idRecommendedIn",
+        "label": "idRecommendedIn",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any",
+          "APHC BIRPUR, KANTI",
+          "APHC DHAMAAULI RAMNATH, KANTI",
+          "APHC LASHGARIPUR, KANTI",
+          "APHC PANAPUR HAWELI, KANTI",
+          "APHC PANAPUR KARIYAT, KANTI",
+          "APHC BERAI, KATRA",
+          "APHC PAHSAUL, KATRA",
+          "APHC JAJUAR, KATRA",
+          "APHC JAMALABAD, MUSHARI",
+          "APHC MADANPUR CHAUBE, MUSHARI",
+          "APHC PAKRI ISMAIL, MUSHARI",
+          "APHC SHEIKHPURA, MUSHARI",
+          "APHC SHERPUR MUSHARI",
+          "APHC CHAJAN GONU CHOWK, KUDHANI",
+          "APHC CHANDRAHATTI, KUDHANI",
+          "APHC FATEHPUR, KUDHANI",
+          "APHC KERMAH CHOWK, KUDHANI",
+          "APHC KHARAUNA DIH, KUDHANI",
+          "APHC MANIYARI,KUDHANI"
+        ]
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "idCancellationReason",
+        "id": "idCancellationReason",
+        "label": "idCancellationReason",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idCancelRecommendationID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iPrescreeningPatientID",
+        "id": "",
+        "label": "iPrescreeningPatientID",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasPatientID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasLinkScheduleID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasLinkAdmitID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "healthID",
+        "id": "idhealthIDToLink",
+        "label": "Patient ABHA ID",
+        "placeholder": "Patient ABHA ID",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "NDHB-auth-mode",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHM-auth-otp-box",
+        "label": "Enter OTP",
+        "placeholder": "Enter OTP",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-name",
+        "label": "Enter NDHB registered name",
+        "placeholder": "Enter NDHB registered name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Other",
+          "Unknown"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-dob",
+        "label": "Enter Date of Birth",
+        "placeholder": "Enter Date of Birth",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-identifier",
+        "label": "Enter selected identifier details",
+        "placeholder": "Enter selected identifier details",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "idNewAttachments[]",
+        "id": "idAttachmentFileMultiple",
+        "label": "idNewAttachments[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "iPrescreeningPatientID",
+        "id": "",
+        "label": "iPrescreeningPatientID",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "idNewAttachments[]",
+        "id": "idAttachmentFileMultiple",
+        "label": "idNewAttachments[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      }
+    ],
+    "tables": [
+      {
+        "id": "",
+        "headers": [
+          "Visit ID",
+          "Patient",
+          "Sample Name",
+          "Test Name",
+          "Referring Doctor",
+          "Sample Barcode",
+          "Sample Status",
+          "Actions"
+        ]
+      },
+      {
+        "id": "idTableRecommendation",
+        "headers": [
+          "Sr. No.",
+          "Patient",
+          "Study",
+          "Recommendation In",
+          "Rec. By",
+          "Status",
+          "Action"
+        ]
+      },
+      {
+        "id": "idNDHBPatientHealthIDToLinkList",
+        "headers": [
+          "#",
+          "ABHA ID",
+          "Linked On",
+          "Linked By"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "idDisplayAttachmentList",
+        "headers": []
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/MISDashboard.php",
+    "title": "MIS Reports",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "OPD",
+      "Consultation",
+      "Lab",
+      "Pharmacy",
+      "Nursing"
+    ],
+    "fields": [],
+    "tables": [],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/AEPatientRegistration.php",
+    "title": "A & E Patient Registration",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Patient Details",
+      "Address",
+      "Communications",
+      "A&E Details",
+      "Wards",
+      "Beds",
+      "MLC Details",
+      "Possible Duplicate Patients Found",
+      "Link ABHA",
+      "Create ABHA",
+      "Existing ABHA found!",
+      "Existing ABHA Found with Aadhaar!",
+      "Today's Registrations",
+      "No Patients Registered Today.",
+      "OPD Recommendation",
+      "Cancellation Reason",
+      "Registration Successful",
+      "MLC Details",
+      "Keyboard Shortcuts"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientSearch",
+        "label": "Search with Patient Name, No, Mobile, Email...",
+        "placeholder": "Search with Patient Name, No, Mobile, Email...",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientABHAAddress",
+        "label": "Enter ABHA Address",
+        "placeholder": "Enter ABHA Address",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAAddressforPatient",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHARequestID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAClinicID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAAccessToken",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "iIsNewHealthID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idIsExistingABHA",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientDeadStatus",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "iPatientNo",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientDistrict",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientCountry",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientState",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientBlock",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientPanchayat",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientVillage",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "idUserID",
+        "id": "idUserID",
+        "label": "idUserID",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "idAdmitBedFor",
+        "id": "idAdmitBedFor",
+        "label": "idAdmitBedFor",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "idAdmitBed",
+        "id": "idAdmitBed",
+        "label": "idAdmitBed",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "idAdmitWard",
+        "id": "idAdmitWard",
+        "label": "idAdmitWard",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "idPatientAdmissionStatus",
+        "id": "idPatientAdmissionStatus",
+        "label": "idPatientAdmissionStatus",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "iAdmitID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "_csrf_token",
+        "id": "",
+        "label": "_csrf_token",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientFirstName",
+        "label": "First Name",
+        "placeholder": "First Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientMiddleName",
+        "label": "Middle Name",
+        "placeholder": "Middle Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientLastName",
+        "label": "Last Name",
+        "placeholder": "Last Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeY",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeM",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeD",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatAgeInTotalDays",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientDOB",
+        "label": "DD-MM-YYYY",
+        "placeholder": "DD-MM-YYYY",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientGender",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Male",
+          "Female",
+          "Transgender"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientMaritalStatus",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Single",
+          "Married",
+          "Divorced",
+          "Separated",
+          "Widow",
+          "Widower"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientFatherName",
+        "label": "Father / Spouse Name",
+        "placeholder": "Father / Spouse Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientAdmitDateTime",
+        "label": "DD-MM-YYYY HH:MM",
+        "placeholder": "DD-MM-YYYY HH:MM",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientBloodGroup",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "A+",
+          "A-",
+          "B+",
+          "B-",
+          "O+",
+          "O-",
+          "AB+",
+          "AB-"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientReligionCaste",
+        "label": "Religion / Caste",
+        "placeholder": "Religion / Caste",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientCategory",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "General",
+          "OBC",
+          "EBC",
+          "SC",
+          "ST"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientCountry",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientState",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientDistrict",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientBlock",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientWard",
+        "label": "Ward",
+        "placeholder": "Ward",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientVillage",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientPanchayat",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPostOffice",
+        "label": "Post Office",
+        "placeholder": "Post Office",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPoliceStation",
+        "label": "Police Station",
+        "placeholder": "Police Station",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPinCode",
+        "label": "Pin Code",
+        "placeholder": "Pin Code",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientAddress",
+        "label": "Address",
+        "placeholder": "Address",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "patientPhoto",
+        "id": "patientPhoto",
+        "label": "patientPhoto",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "",
+        "id": "idPatientEmail",
+        "label": "Email",
+        "placeholder": "Email",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientMobile",
+        "label": "Mobile",
+        "placeholder": "Mobile",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "idIsMLCAppointment",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idClinic",
+        "id": "idClinic",
+        "label": "idClinic",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "ServiceTypeID[]",
+        "id": "idModalityType_0",
+        "label": "ServiceTypeID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idOPDType",
+        "id": "idOPDType_0",
+        "label": "idOPDType",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "staffID[]",
+        "id": "idStaff_0",
+        "label": "staffID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "feeStructure",
+        "id": "idFeeStructure",
+        "label": "feeStructure",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idChannelTypeId",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "textarea",
+        "name": "",
+        "id": "idReason",
+        "label": "Reason",
+        "placeholder": "Reason",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idMlcNo",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPoliceStationName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPsiConstableName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "label": "DD-MM-YYYY",
+        "placeholder": "DD-MM-YYYY",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idDatetime",
+        "label": "DD-MM-YYYY HH:MM",
+        "placeholder": "DD-MM-YYYY HH:MM",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idMrdMldRegistrationDate",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idMedicoLegalType",
+        "id": "idMedicoLegalType",
+        "label": "idMedicoLegalType",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Type of Medico legal case",
+          "Injuries due to Accidents and Assault",
+          "Suspected or evident cases of suicides or homicides (even attempted cases). Confirmed or suspected cases of poisoning. Burns",
+          "Cases of injuries with a likelihood of death",
+          "Sexual Offences",
+          "Suspected or evident criminal abortion",
+          "All patients brought to the hospital in suspicious circumstances or with an improper history (ex: found dead on the road)",
+          "Unconscious patients whose cause of unconsciousness is not clear",
+          "Child Abuse",
+          "Domestic Violence",
+          "Person under Police Custody or Judicial Custody",
+          "Patients dying suddenly on the operating table or after parenteral administration of a drug or medication",
+          "Case of Drunkenness",
+          "Brought Dead",
+          "Natural Disaster"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "idMLCDocUpload",
+        "id": "idMLCDocUpload",
+        "label": "idMLCDocUpload",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idMLCConsentTaken",
+        "id": "idMLCConsentTaken",
+        "label": "idMLCConsentTaken",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any",
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "idMLCConsentUpload",
+        "id": "idMLCConsentUpload",
+        "label": "idMLCConsentUpload",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "specialnote",
+        "id": "idSpecialNotes",
+        "label": "specialnote",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasPatientID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasLinkScheduleID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasLinkAdmitID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "healthID",
+        "id": "idhealthIDToLink",
+        "label": "Patient ABHA ID",
+        "placeholder": "Patient ABHA ID",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "NDHB-auth-mode",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHM-auth-otp-box",
+        "label": "Enter OTP",
+        "placeholder": "Enter OTP",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-name",
+        "label": "Enter NDHB registered name",
+        "placeholder": "Enter NDHB registered name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Other",
+          "Unknown"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "id": "idNDHBPatientHealthIDToLinkList",
+        "headers": [
+          "#",
+          "ABHA ID",
+          "Linked On",
+          "Linked By"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": [
+          "Time",
+          "Patient",
+          "Doctor",
+          "Action"
+        ]
+      },
+      {
+        "id": "idTableRecommendation",
+        "headers": [
+          "Sr. No.",
+          "Patient",
+          "Study",
+          "Recommendation In",
+          "Rec. By",
+          "Status",
+          "Action"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": []
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/drugDispensev2.php",
+    "title": "Drug Dispense",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Search Patient",
+      "No Patient Records! Select another patient!",
+      "Total Amount:",
+      "Paid Amount:",
+      "Pending Amount:",
+      "IPD Bill No.:",
+      "Patient Prescriptions",
+      "Email The Bill",
+      "Current Medication",
+      "Patient Active Recommendation(s)",
+      "Direct Dispense",
+      "Direct Dispense"
+    ],
+    "fields": [
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "idPharmacyDepartment",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "patient_name",
+        "id": "idPatientName",
+        "label": "Patient Name / Patient ID / Visit No. / Mobile No",
+        "placeholder": "Patient Name / Patient ID / Visit No. / Mobile No",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "medixcel_patient_id",
+        "id": "",
+        "label": "medixcel_patient_id",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "patient_id",
+        "id": "",
+        "label": "patient_id",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idTokenSearch",
+        "label": "Search Visit No...",
+        "placeholder": "Search Visit No...",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "idPrescriptionDoctorName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "idPresumptiveDiagnosisSelect",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Diarrhea",
+          "Dysentery",
+          "Flu / ARI / lnfluenza",
+          "Chickenpox",
+          "Pneumonia",
+          "Measles",
+          "Mumps",
+          "Rubella",
+          "Diphtheria",
+          "Dengue",
+          "Chikungunya",
+          "JE / AES",
+          "Meningitis",
+          "Leptospirosis",
+          "Typhoid",
+          "Dog Bite",
+          "Snake Bite",
+          "Human Rabies",
+          "Hepatitis",
+          "Filaria"
+        ]
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "",
+        "id": "idDispenseNotes",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idDateToday",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idItemSuggestionbox",
+        "label": "Add Item",
+        "placeholder": "Add Item",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idItemQuantity",
+        "label": "Quantity",
+        "placeholder": "Quantity",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "idSelectBillDiscountByPercentage",
+        "id": "idSelectBillDiscountByPercentage",
+        "label": "idSelectBillDiscountByPercentage",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDiscountPercentage",
+        "id": "idDiscountPercentage",
+        "label": "%",
+        "placeholder": "%",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idTotalDiscountAmount",
+        "id": "idTotalDiscountAmount",
+        "label": "idTotalDiscountAmount",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "_csrf_token",
+        "id": "",
+        "label": "_csrf_token",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "",
+        "id": "idEmailBillTo",
+        "label": "Enter Email ID",
+        "placeholder": "Enter Email ID",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "BillBody",
+        "id": "idBillEmailText",
+        "label": "BillBody",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idFilePath",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientFirstName",
+        "id": "idDirectDispensePatientFirstName",
+        "label": "Patient First Name",
+        "placeholder": "Patient First Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientLastName",
+        "id": "idDirectDispensePatientLastName",
+        "label": "Patient Last Name",
+        "placeholder": "Patient Last Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientMobile",
+        "id": "idDirectDispensePatientMobile",
+        "label": "Mobile",
+        "placeholder": "Mobile",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idDirectDispensePatientGender",
+        "id": "idDirectDispensePatientGender",
+        "label": "idDirectDispensePatientGender",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Male",
+          "Female"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientDOB",
+        "id": "idDirectDispensePatientDOB",
+        "label": "Date of Birth (DD-MM-YYYY)",
+        "placeholder": "Date of Birth (DD-MM-YYYY)",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "idDirectDispensePatientAge",
+        "id": "idDirectDispensePatientAge",
+        "label": "Age (Years)",
+        "placeholder": "Age (Years)",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientFirstName",
+        "id": "idDirectDispensePatientFirstName",
+        "label": "Patient First Name",
+        "placeholder": "Patient First Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientLastName",
+        "id": "idDirectDispensePatientLastName",
+        "label": "Patient Last Name",
+        "placeholder": "Patient Last Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientMobile",
+        "id": "idDirectDispensePatientMobile",
+        "label": "Mobile",
+        "placeholder": "Mobile",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idDirectDispensePatientGender",
+        "id": "idDirectDispensePatientGender",
+        "label": "idDirectDispensePatientGender",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Male",
+          "Female"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "idDirectDispensePatientDOB",
+        "id": "idDirectDispensePatientDOB",
+        "label": "Date of Birth (DD-MM-YYYY)",
+        "placeholder": "Date of Birth (DD-MM-YYYY)",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "idDirectDispensePatientAge",
+        "id": "idDirectDispensePatientAge",
+        "label": "Age (Years)",
+        "placeholder": "Age (Years)",
+        "required": false,
+        "options": []
+      }
+    ],
+    "tables": [
+      {
+        "id": "",
+        "headers": [
+          "Payment Date",
+          "Paid Amount",
+          "Payment Mode"
+        ]
+      },
+      {
+        "id": "",
+        "headers": [
+          "Sr No",
+          "Schedule Date",
+          "Service Name",
+          "Doctor Name",
+          "Drug Counts",
+          "Dispensed?",
+          "Follow Up Date",
+          "Actions"
+        ]
+      },
+      {
+        "id": "",
+        "headers": [
+          "Sr No",
+          "Brand Name",
+          "Generic Name",
+          "Formulation",
+          "Strength",
+          "Frequency",
+          "Days",
+          "Quantity"
+        ]
+      },
+      {
+        "id": "",
+        "headers": [
+          "Sr. No",
+          "Item Name",
+          "Batch No. | Stock | DOE | Source",
+          "Item Qty ( /Batch(es) Stock [Total Stock])",
+          "Item Rate",
+          "Item Discount",
+          "Discount Amt.",
+          "Dispense",
+          "Instruction / Frequency",
+          "Total"
+        ]
+      },
+      {
+        "id": "idTablePatientCurrentMedication",
+        "headers": [
+          "Drug Name",
+          "Formulation",
+          "Strength",
+          "Frequency",
+          "Start Date",
+          "End Date"
+        ]
+      },
+      {
+        "id": "idTablePatientActiveRecommendations",
+        "headers": [
+          "Sr.No.",
+          "Patient",
+          "Study",
+          "Recommendation In",
+          "Rec. By",
+          "Status"
+        ]
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/pathologyPatientRegistration.php",
+    "title": "Pathology Patient Registration",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Patient Details",
+      "Address",
+      "Communications",
+      "Test Details",
+      "Identification",
+      "Schemes",
+      "MLC Details",
+      "Possible Duplicate Patients Found",
+      "Search Referred-In Patients",
+      "Link ABHA",
+      "Create ABHA",
+      "Existing ABHA found!",
+      "Existing ABHA Found with Aadhaar!",
+      "Today's Registrations",
+      "No Patients Registered Today.",
+      "Roster of The Day / 06-09-2026",
+      "APHC Mordiva Samastipur HFR: IN1010007274",
+      "Shifts",
+      "OPD Recommendation",
+      "Cancellation Reason",
+      "Registration Successful",
+      "Keyboard Shortcuts"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientSearch",
+        "label": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+        "placeholder": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHealthIDNumber",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientABHAAddress",
+        "label": "Enter ABHA Address",
+        "placeholder": "Enter ABHA Address",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAAddressforPatient",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHARequestID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAClinicID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientABHAAccessToken",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idIsExistingABHA",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "iIsNewHealthID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "sProfileShareIDHidden",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientDeadStatus",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "iPatientNo",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientDistrict",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientCountry",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientState",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientBlock",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientPanchayat",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idHiddenPatientVillage",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientFirstName",
+        "label": "First Name",
+        "placeholder": "First Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientMiddleName",
+        "label": "Middle Name",
+        "placeholder": "Middle Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientLastName",
+        "label": "Last Name",
+        "placeholder": "Last Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeY",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeM",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "idPatientAgeD",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatAgeInTotalDays",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientDOB",
+        "label": "DD-MM-YYYY",
+        "placeholder": "DD-MM-YYYY",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientGender",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Male",
+          "Female",
+          "Transgender"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientMaritalStatus",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "Single",
+          "Married",
+          "Divorced",
+          "Separated",
+          "Widow",
+          "Widower"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientFatherName",
+        "label": "Father / Spouse Name",
+        "placeholder": "Father / Spouse Name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientANMOLAshaWorker",
+        "label": "ASHA Worker",
+        "placeholder": "ASHA Worker",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientBloodGroup",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "A+",
+          "A-",
+          "B+",
+          "B-",
+          "O+",
+          "O-",
+          "AB+",
+          "AB-"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientReligionCaste",
+        "label": "Religion / Caste",
+        "placeholder": "Religion / Caste",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientCategory",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select",
+          "General",
+          "OBC",
+          "EBC",
+          "SC",
+          "ST"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientCountry",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientState",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientDistrict",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientBlock",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientWard",
+        "label": "Ward",
+        "placeholder": "Ward",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientVillage",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "title",
+        "id": "idPatientPanchayat",
+        "label": "title",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPostOffice",
+        "label": "Post Office",
+        "placeholder": "Post Office",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPoliceStation",
+        "label": "Police Station",
+        "placeholder": "Police Station",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientPinCode",
+        "label": "Pin Code",
+        "placeholder": "Pin Code",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientAddress",
+        "label": "Address",
+        "placeholder": "Address",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "saveNewImage",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "patientPhoto",
+        "id": "patientPhoto",
+        "label": "patientPhoto",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "",
+        "id": "idPatientEmail",
+        "label": "Email",
+        "placeholder": "Email",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPatientMobile",
+        "label": "Mobile",
+        "placeholder": "Mobile",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idPatientScanProfileMobile",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "idIsMLCAppointment",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idClinic",
+        "id": "idClinic",
+        "label": "idClinic",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "ServiceTypeID[]",
+        "id": "idModalityType_0",
+        "label": "ServiceTypeID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idOPDType",
+        "id": "idOPDType_0",
+        "label": "idOPDType",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idSampleCountValue",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "staffID[]",
+        "id": "idStaff_0",
+        "label": "staffID[]",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "room_no",
+        "id": "idRoomNo",
+        "label": "room_no",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "recommendedStaffID",
+        "id": "idRecommendedStaff",
+        "label": "recommendedStaffID",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "textarea",
+        "type": "textarea",
+        "name": "",
+        "id": "idReason",
+        "label": "Reason",
+        "placeholder": "Reason",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idAadhaarNo",
+        "label": "Aadhaar No",
+        "placeholder": "Aadhaar No",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idEpicNo",
+        "label": "EPIC No / Voter ID",
+        "placeholder": "EPIC No / Voter ID",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesPMJAY",
+        "label": "PMJAY",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesRBSK",
+        "label": "RBSK",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesNCDCBAC",
+        "label": "NCD/CBAC",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesHBNC",
+        "label": "HBNC",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesBPL",
+        "label": "BPL",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesPMSMA",
+        "label": "PMSMA",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesFPOT",
+        "label": "FPOT",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesFP",
+        "label": "FP",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesHBYC",
+        "label": "HBYC",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "sSchemes[]",
+        "id": "idFlexCheckSchemesOthers",
+        "label": "Others",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idMlcNo",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPoliceStationName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idPsiConstableName",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "label": "DD-MM-YYYY",
+        "placeholder": "DD-MM-YYYY",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idDatetime",
+        "label": "DD-MM-YYYY HH:MM",
+        "placeholder": "DD-MM-YYYY HH:MM",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idMrdMldRegistrationDate",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idMedicoLegalType",
+        "id": "idMedicoLegalType",
+        "label": "idMedicoLegalType",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Type of Medico legal case",
+          "Injuries due to Accidents and Assault",
+          "Suspected or evident cases of suicides or homicides (even attempted cases). Confirmed or suspected cases of Poisoning. Burns",
+          "Cases of injuries with likelihood of death",
+          "Sexual Offences",
+          "Suspected or evident Criminal Abortion",
+          "All patients brought to the hospital in suspicious circumstances/ improper history (ex: found dead on road)",
+          "Unconscious patients where cause of unconsciousness is not clear",
+          "Child Abuse",
+          "Domestic Violence",
+          "Person under Police Custody or Judicial Custody",
+          "Patients dying suddenly on operation table or after parenteral administration of a drug or medication",
+          "Case of Drunkenness",
+          "Brought Dead",
+          "Natural Disaster"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "idMLCDocUpload",
+        "id": "idMLCDocUpload",
+        "label": "idMLCDocUpload",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "idMLCConsentTaken",
+        "id": "idMLCConsentTaken",
+        "label": "idMLCConsentTaken",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select Any",
+          "Yes",
+          "No"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "id": "",
+        "headers": [
+          "Sr. No.",
+          "Name",
+          "Patient No",
+          "ABHA IDs",
+          "Mobile",
+          "Age",
+          "Gender",
+          "District",
+          "Block",
+          "Action"
+        ]
+      },
+      {
+        "id": "idNDHBPatientHealthIDToLinkList",
+        "headers": [
+          "#",
+          "ABHA ID",
+          "Linked On",
+          "Linked By"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": [
+          "Visit No",
+          "Time",
+          "Patient",
+          "OPD Type (Modality)",
+          "Actions"
+        ]
+      },
+      {
+        "id": "",
+        "headers": [
+          "Sr. No",
+          "Doctors"
+        ]
+      },
+      {
+        "id": "idTableRecommendation",
+        "headers": [
+          "Sr. No.",
+          "Patient",
+          "Study",
+          "Recommendation In",
+          "Rec. By",
+          "Status",
+          "Action"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": []
+      },
+      {
+        "id": "",
+        "headers": []
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/abdmProfile.php",
+    "title": "ABDM Profile",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "ABDM Profile  Last 2 Hours.",
+      "Shared Profile Details:",
+      "Suggestions:",
+      "No suggested patient's found.",
+      "Link ABHA"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "",
+        "id": "keyword",
+        "label": "Search By Keyword",
+        "placeholder": "Search By Keyword",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idFilterStartDate",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idFilterEndDate",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "idCounterNumber",
+        "label": "Search By Counter Number",
+        "placeholder": "Search By Counter Number",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasPatientID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasLinkScheduleID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "hidden",
+        "name": "",
+        "id": "idOffcanvasLinkAdmitID",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "healthID",
+        "id": "idhealthIDToLink",
+        "label": "Patient ABHA ID",
+        "placeholder": "Patient ABHA ID",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "NDHB-auth-mode",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Select"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHM-auth-otp-box",
+        "label": "Enter OTP",
+        "placeholder": "Enter OTP",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-name",
+        "label": "Enter NDHB registered name",
+        "placeholder": "Enter NDHB registered name",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "select",
+        "type": "",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Other",
+          "Unknown"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-dob",
+        "label": "Enter Date of Birth",
+        "placeholder": "Enter Date of Birth",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "NDHB-auth-mode-DEMOGRAPHICS-identifier",
+        "label": "Enter selected identifier details",
+        "placeholder": "Enter selected identifier details",
+        "required": false,
+        "options": []
+      }
+    ],
+    "tables": [
+      {
+        "id": "idNDHBShareProfileListPage",
+        "headers": [
+          "Sr No.",
+          "Name",
+          "ABHA Address",
+          "ABHA ID",
+          "Gender",
+          "Date Of Birth",
+          "Mobile No",
+          "Scanned Time",
+          "Counter No",
+          "Token No",
+          "Match In System",
+          "Actions"
+        ]
+      },
+      {
+        "id": "idNDHBPatientHealthIDToLinkList",
+        "headers": [
+          "#",
+          "ABHA ID",
+          "Linked On",
+          "Linked By"
+        ]
+      },
+      {
+        "id": "",
+        "headers": []
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  },
+  {
+    "url": "https://hims-aphc.bhavyabiharhealth.in/rosterManagement.php",
+    "title": "Roster Management",
+    "headings": [
+      "BHAVYA",
+      "Veena Kumari",
+      "Logged in Since",
+      "Roster",
+      "Shifts"
+    ],
+    "fields": [
+      {
+        "tag": "select",
+        "type": "",
+        "name": "clinic_id",
+        "id": "idClinic",
+        "label": "clinic_id",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "label": "Search Doctors",
+        "placeholder": "Search Doctors",
+        "required": false,
+        "options": []
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "label": "",
+        "placeholder": "",
+        "required": false,
+        "options": []
+      }
+    ],
+    "tables": [
+      {
+        "id": "",
+        "headers": [
+          "Sr. No",
+          "Doctors"
+        ]
+      }
+    ],
+    "status_code": 200,
+    "is_login_page": false
+  }
+]

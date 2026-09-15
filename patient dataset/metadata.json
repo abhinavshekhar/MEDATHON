@@ -1,0 +1,25 @@
+{
+  "title": "MEDATHON Patient Dataset — Chennai & Tamil Nadu",
+  "description": "2000 synthetic OPD registrations centred on Chennai, Tamil Nadu, India",
+  "region": {
+    "country": "India",
+    "state": "Tamil Nadu",
+    "primaryCity": "Chennai"
+  },
+  "count": 2000,
+  "windowStart": "2026-09-14T18:30:00.000Z",
+  "windowEnd": "2026-09-15T18:30:00.000Z",
+  "timezone": "Asia/Kolkata (IST)",
+  "clinic": {
+    "name": "MEDATHON Urban Health Centre — Chennai",
+    "district": "Chennai",
+    "block": "Chennai Corporation",
+    "hfrId": "HFR-TN-CHN-001"
+  },
+  "generatedAt": "2026-09-15T06:08:31.358Z",
+  "files": {
+    "patients": "patients.json",
+    "csv": "patients.csv",
+    "summary": "summary.json"
+  }
+}

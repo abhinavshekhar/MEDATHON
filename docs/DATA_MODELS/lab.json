@@ -1,0 +1,49 @@
+{
+  "$schema": "Lab / Pathology module entities",
+  "entities": {
+    "PathologyRegistration": {
+      "page": "/pathologyPatientRegistration.php",
+      "fields": [
+        { "name": "patientId", "type": "uuid", "required": true },
+        { "name": "visitId", "type": "string" },
+        { "name": "testsOrdered", "type": "array", "items": "LabTest" },
+        { "name": "referringDoctor", "type": "string" },
+        { "name": "priority", "type": "enum", "options": ["routine", "urgent", "stat"] },
+        { "name": "sampleCollectionDate", "type": "datetime" }
+      ]
+    },
+    "LabQueue": {
+      "page": "/labQueue.php",
+      "purpose": "Samples awaiting processing",
+      "tableColumns": ["Sample ID", "Patient Name", "Patient No", "Test Name", "Ordered Date", "Priority", "Status"]
+    },
+    "LabVerification": {
+      "page": "/labQueue_verification.php",
+      "purpose": "Results pending pathologist verification",
+      "actions": ["approve", "reject", "request_retest"]
+    },
+    "LabReport": {
+      "page": "/reportDispatchedNew.php",
+      "purpose": "Dispatch verified reports to patients/doctors",
+      "actions": ["print", "email", "sms", "abha_upload"]
+    },
+    "DengueReporting": {
+      "page": "/reportDengueLinelist.php",
+      "purpose": "Government dengue surveillance reporting",
+      "fields": ["patientId", "testDate", "result", "district", "block", "village"]
+    },
+    "LabTest": {
+      "fields": [
+        { "name": "testId", "type": "integer" },
+        { "name": "testName", "type": "string" },
+        { "name": "testCode", "type": "string" },
+        { "name": "category", "type": "string" },
+        { "name": "sampleType", "type": "string" },
+        { "name": "result", "type": "string" },
+        { "name": "normalRange", "type": "string" },
+        { "name": "unit", "type": "string" },
+        { "name": "status", "type": "enum", "options": ["ordered", "collected", "processing", "verified", "dispatched"] }
+      ]
+    }
+  }
+}

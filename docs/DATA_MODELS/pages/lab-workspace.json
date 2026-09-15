@@ -1,0 +1,400 @@
+{
+  "title": "Lab Workspace",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/labQueue.php",
+  "legacyPath": "/labQueue.php",
+  "headings": [
+    "Queue: Lab Workspace",
+    "Loading",
+    "No Patients for Selected Criteria",
+    "Filters",
+    "Sample Status",
+    "Referring Doctor",
+    "Modality",
+    "Overdue",
+    "Sample Collection",
+    "Collection Remarks",
+    "Sample Accession",
+    "Accession Note",
+    "Accession",
+    "Lab Recommendation",
+    "Cancellation Reason",
+    "Reject Remark",
+    "Remark",
+    "Link ABHA",
+    "Attachments",
+    "/ Male Female Transgender",
+    "Attachments"
+  ],
+  "searchFields": [
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "id": "idPatientSearch",
+      "label": "Search with Name, ID, Mobile, Email...",
+      "placeholder": "Search with Name, ID, Mobile, Email...",
+      "required": false,
+      "options": []
+    }
+  ],
+  "formFields": [
+    {
+      "id": "idQueueDate",
+      "label": "Please select date",
+      "type": "text",
+      "tag": "input",
+      "required": true,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "Patient Name / Patient No. / Barcode / Visit ID",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idSampleRemarks",
+      "label": "Enter Sample Collection Remarks",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "selectedCollectionRequestID[]",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "Date",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "Barcode",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "Time",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "collectedBy[]",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "collectedAt[]",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "APHC BIRPUR, KANTI",
+        "APHC DHAMAAULI RAMNATH, KANTI",
+        "APHC LASHGARIPUR, KANTI",
+        "APHC PANAPUR HAWELI, KANTI",
+        "APHC PANAPUR KARIYAT, KANTI",
+        "APHC BERAI, KATRA",
+        "APHC PAHSAUL, KATRA",
+        "APHC JAJUAR, KATRA",
+        "APHC JAMALABAD, MUSHARI",
+        "APHC MADANPUR CHAUBE, MUSHARI",
+        "APHC PAKRI ISMAIL, MUSHARI",
+        "APHC SHEIKHPURA, MUSHARI",
+        "APHC SHERPUR MUSHARI",
+        "APHC CHAJAN GONU CHOWK, KUDHANI",
+        "APHC CHANDRAHATTI, KUDHANI",
+        "APHC FATEHPUR, KUDHANI",
+        "APHC KERMAH CHOWK, KUDHANI",
+        "APHC KHARAUNA DIH, KUDHANI",
+        "APHC MANIYARI,KUDHANI",
+        "APHC SONBARSA SHAH, KUDHANI"
+      ]
+    },
+    {
+      "id": "idAccessionRemarks",
+      "label": "Enter Accession Note",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "iCollectionRequestID[]",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idselectDate",
+      "label": "Please select date",
+      "type": "text",
+      "tag": "input",
+      "required": true,
+      "options": []
+    },
+    {
+      "id": "idRecommendationStatus",
+      "label": "idRecommendationStatus",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Pending",
+        "Scheduled",
+        "Cancelled"
+      ]
+    },
+    {
+      "id": "idClinicName",
+      "label": "idClinicName",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idServiceTypeID",
+      "label": "idServiceTypeID",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select Any",
+        "Pathology"
+      ]
+    },
+    {
+      "id": "idServiceID",
+      "label": "idServiceID",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idRecommendedIn",
+      "label": "idRecommendedIn",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select Any",
+        "APHC BIRPUR, KANTI",
+        "APHC DHAMAAULI RAMNATH, KANTI",
+        "APHC LASHGARIPUR, KANTI",
+        "APHC PANAPUR HAWELI, KANTI",
+        "APHC PANAPUR KARIYAT, KANTI",
+        "APHC BERAI, KATRA",
+        "APHC PAHSAUL, KATRA",
+        "APHC JAJUAR, KATRA",
+        "APHC JAMALABAD, MUSHARI",
+        "APHC MADANPUR CHAUBE, MUSHARI",
+        "APHC PAKRI ISMAIL, MUSHARI",
+        "APHC SHEIKHPURA, MUSHARI",
+        "APHC SHERPUR MUSHARI",
+        "APHC CHAJAN GONU CHOWK, KUDHANI",
+        "APHC CHANDRAHATTI, KUDHANI",
+        "APHC FATEHPUR, KUDHANI",
+        "APHC KERMAH CHOWK, KUDHANI",
+        "APHC KHARAUNA DIH, KUDHANI",
+        "APHC MANIYARI,KUDHANI"
+      ]
+    },
+    {
+      "id": "idCancellationReason",
+      "label": "idCancellationReason",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idhealthIDToLink",
+      "label": "Patient ABHA ID",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode",
+      "label": "NDHB-auth-mode",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select"
+      ]
+    },
+    {
+      "id": "NDHM-auth-otp-box",
+      "label": "Enter OTP",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-name",
+      "label": "Enter NDHB registered name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+      "label": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Male",
+        "Female",
+        "Other",
+        "Unknown"
+      ]
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-dob",
+      "label": "Enter Date of Birth",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-identifier",
+      "label": "Enter selected identifier details",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idAttachmentFileMultiple",
+      "label": "idNewAttachments[]",
+      "type": "file",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idAttachmentFileMultiple",
+      "label": "idNewAttachments[]",
+      "type": "file",
+      "tag": "input",
+      "required": false,
+      "options": []
+    }
+  ],
+  "tables": [
+    {
+      "id": "",
+      "headers": [
+        "Visit ID",
+        "Patient",
+        "Sample Name",
+        "Test Name",
+        "Referring Doctor",
+        "Sample Barcode",
+        "Sample Status",
+        "Actions"
+      ]
+    },
+    {
+      "id": "idTableRecommendation",
+      "headers": [
+        "Sr. No.",
+        "Patient",
+        "Study",
+        "Recommendation In",
+        "Rec. By",
+        "Status",
+        "Action"
+      ]
+    },
+    {
+      "id": "idNDHBPatientHealthIDToLinkList",
+      "headers": [
+        "#",
+        "ABHA ID",
+        "Linked On",
+        "Linked By"
+      ]
+    },
+    {
+      "id": "",
+      "headers": []
+    },
+    {
+      "id": "idDisplayAttachmentList",
+      "headers": []
+    }
+  ],
+  "fieldCount": 33,
+  "tableCount": 5
+}

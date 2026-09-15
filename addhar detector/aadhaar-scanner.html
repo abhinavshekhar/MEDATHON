@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aadhaar Scanner</title>
+<style>
+  :root {
+    --soil: #2f2a22;
+    --field: #45623f;
+    --field-deep: #2e4429;
+    --wheat: #c8a24a;
+    --paper: #f6f2e9;
+    --line: #ded5c2;
+    --ink: #26241d;
+    --danger: #9a3b2e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    line-height: 1.5;
+  }
+
+  header {
+    padding: 2.2rem 1.5rem 1.4rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  header h1 {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    margin: 0 0 0.35rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  header p {
+    margin: 0;
+    color: #5c5747;
+    font-size: 1rem;
+    max-width: 60ch;
+  }
+
+  main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 1.8rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  @media (min-width: 780px) {
+    main { grid-template-columns: 1.1fr 1fr; align-items: start; }
+  }
+
+  .panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+
+  .camera-panel { overflow: hidden; }
+
+  .camera-wrap {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: #1a1a1a;
+  }
+
+  video, canvas.overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  canvas.overlay { pointer-events: none; }
+
+  .status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #5c5747;
+    border-top: 1px solid var(--line);
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #b7ad92;
+    margin-right: 0.5rem;
+  }
+  .status-dot.live { background: var(--field); }
+  .status-dot.found { background: var(--wheat); }
+
+  .controls { padding: 1rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+  button {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 3px;
+    border: 1px solid var(--field-deep);
+    background: var(--field);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  button.secondary {
+    background: transparent;
+    color: var(--field-deep);
+  }
+
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .results-panel { padding: 1.3rem 1.4rem; min-height: 260px; }
+
+  .results-panel h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.9rem;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    color: var(--field-deep);
+  }
+
+  .empty-state {
+    color: #8b8470;
+    font-size: 0.95rem;
+    padding: 1.5rem 0;
+  }
+
+  dl.fields {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    row-gap: 0.55rem;
+    column-gap: 0.8rem;
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+
+  dl.fields dt {
+    color: #8b8470;
+    font-size: 0.82rem;
+    padding-top: 0.15rem;
+  }
+
+  dl.fields dd {
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  .source-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.78rem;
+    color: #8b8470;
+    border-top: 1px solid var(--line);
+    padding-top: 0.8rem;
+    width: 100%;
+  }
+
+  .notice {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.85rem;
+    background: #f4ede0;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0.9rem 1rem;
+    color: #5c5747;
+  }
+
+  .notice strong { color: var(--soil); }
+
+  .error-text { color: var(--danger); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.88rem; }
+
+  .ocr-raw {
+    white-space: pre-wrap;
+    font-family: ui-monospace, monospace;
+    font-size: 0.78rem;
+    background: #faf8f3;
+    border: 1px solid var(--line);
+    padding: 0.7rem;
+    border-radius: 3px;
+    max-height: 160px;
+    overflow-y: auto;
+    margin-top: 0.6rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Aadhaar Scanner</h1>
+  <p>Point the camera at the QR code on the back of an Aadhaar card. Everything runs in this browser tab — no image or data is uploaded anywhere.</p>
+</header>
+
+<main>
+  <section class="panel camera-panel">
+    <div class="camera-wrap">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="overlay" class="overlay"></canvas>
+    </div>
+    <div class="status-bar">
+      <span><span id="statusDot" class="status-dot"></span><span id="statusText">Camera not started</span></span>
+      <span id="ocrProgress"></span>
+    </div>
+    <div class="controls">
+      <button id="startBtn">Start camera</button>
+      <button id="ocrBtn" class="secondary" disabled>Try OCR on this frame</button>
+      <button id="resetBtn" class="secondary">Clear result</button>
+    </div>
+  </section>
+
+  <section class="panel results-panel">
+    <h2>Scanned details</h2>
+    <div id="resultBody">
+      <p class="empty-state">Nothing scanned yet. Hold the QR steady, well lit, and roughly filling a third of the frame.</p>
+    </div>
+  </section>
+</main>
+
+<div style="max-width:920px;margin:0 auto 3rem;padding:0 1.5rem;">
+  <div class="notice">
+    <strong>Before you scan someone's Aadhaar:</strong> get their consent, and avoid storing the full Aadhaar number if you can get by with just the last 4 digits — this page masks it by default. Aadhaar data is sensitive personal data under India's DPDP Act, 2023.
+  </div>
+</div>
+
+<canvas id="hiddenCanvas" style="display:none;"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.0.4/tesseract.min.js"></script>
+<script>
+const MASK_AADHAAR = true;
+
+const video = document.getElementById('video');
+const overlay = document.getElementById('overlay');
+const overlayCtx = overlay.getContext('2d');
+const hiddenCanvas = document.getElementById('hiddenCanvas');
+const hiddenCtx = hiddenCanvas.getContext('2d', { willReadFrequently: true });
+
+const startBtn = document.getElementById('startBtn');
+const ocrBtn = document.getElementById('ocrBtn');
+const resetBtn = document.getElementById('resetBtn');
+const statusDot = document.getElementById('statusDot');
+const statusText = document.getElementById('statusText');
+const ocrProgress = document.getElementById('ocrProgress');
+const resultBody = document.getElementById('resultBody');
+
+let scanning = false;
+let rafId = null;
+let alreadyShown = null; // dedupe repeated frames of the same QR
+
+startBtn.addEventListener('click', startCamera);
+ocrBtn.addEventListener('click', runOcrOnCurrentFrame);
+resetBtn.addEventListener('click', () => {
+  alreadyShown = null;
+  renderEmpty();
+});
+
+async function startCamera() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 960 } }
+    });
+    video.srcObject = stream;
+    await video.play();
+    scanning = true;
+    ocrBtn.disabled = false;
+    startBtn.disabled = true;
+    setStatus('live', 'Scanning for QR code…');
+    tick();
+  } catch (err) {
+    setStatus('', 'Camera access failed');
+    renderError('Could not access the camera: ' + err.message +
+      '. Check your browser\'s camera permission for this page.');
+  }
+}
+
+function setStatus(state, text) {
+  statusDot.className = 'status-dot' + (state ? ' ' + state : '');
+  statusText.textContent = text;
+}
+
+function tick() {
+  if (!scanning) return;
+  if (video.readyState === video.HAVE_ENOUGH_DATA) {
+    hiddenCanvas.width = video.videoWidth;
+    hiddenCanvas.height = video.videoHeight;
+    hiddenCtx.drawImage(video, 0, 0, hiddenCanvas.width, hiddenCanvas.height);
+    const imageData = hiddenCtx.getImageData(0, 0, hiddenCanvas.width, hiddenCanvas.height);
+
+    const code = jsQR(imageData.data, imageData.width, imageData.height, {
+      inversionAttempts: 'attemptBoth'
+    });
+
+    overlay.width = hiddenCanvas.width;
+    overlay.height = hiddenCanvas.height;
+    overlayCtx.clearRect(0, 0, overlay.width, overlay.height);
+
+    if (code) {
+      drawBox(code.location);
+      const dedupeKey = code.binaryData ? code.binaryData.join(',') : code.data;
+      if (dedupeKey !== alreadyShown) {
+        alreadyShown = dedupeKey;
+        setStatus('found', 'QR captured');
+        handleDecodedQr(code);
+      }
+    } else {
+      setStatus('live', 'Scanning for QR code…');
+    }
+  }
+  rafId = requestAnimationFrame(tick);
+}
+
+function drawBox(loc) {
+  overlayCtx.strokeStyle = '#c8a24a';
+  overlayCtx.lineWidth = 4;
+  overlayCtx.beginPath();
+  overlayCtx.moveTo(loc.topLeftCorner.x, loc.topLeftCorner.y);
+  overlayCtx.lineTo(loc.topRightCorner.x, loc.topRightCorner.y);
+  overlayCtx.lineTo(loc.bottomRightCorner.x, loc.bottomRightCorner.y);
+  overlayCtx.lineTo(loc.bottomLeftCorner.x, loc.bottomLeftCorner.y);
+  overlayCtx.closePath();
+  overlayCtx.stroke();
+}
+
+// ---------- QR content parsing ----------
+
+function handleDecodedQr(code) {
+  const text = code.data || '';
+  if (looksLikeXml(text)) {
+    renderFields(parseXmlQr(text), 'Old-format XML QR');
+    return;
+  }
+  if (code.binaryData && code.binaryData.length) {
+    try {
+      const fields = parseSecureQr(new Uint8Array(code.binaryData));
+      renderFields(fields, 'Secure QR');
+      return;
+    } catch (e) {
+      renderError('Found a QR code but could not parse it as a Secure QR: ' + e.message);
+      return;
+    }
+  }
+  renderError('QR code detected, but its format was not recognized as Aadhaar.');
+}
+
+function looksLikeXml(text) {
+  return text.trim().startsWith('<') && /uid\s*=/.test(text.slice(0, 300));
+}
+
+function parseXmlQr(text) {
+  const fields = {};
+  const re = /(\w+)="([^"]*)"/g;
+  let m;
+  while ((m = re.exec(text)) !== null) fields[m[1]] = m[2];
+  return fields;
+}
+
+// Secure QR: zlib/deflate-compressed, fields separated by byte 0xFF,
+// terminates in an embedded JPEG photo (starts near 0xFF 0xD8).
+function parseSecureQr(rawBytes) {
+  let data;
+  try {
+    data = pako.inflateRaw(rawBytes);
+  } catch (e) {
+    try {
+      data = pako.inflate(rawBytes);
+    } catch (e2) {
+      data = rawBytes; // assume uncompressed
+    }
+  }
+
+  // Split on 0xFF delimiter, but stop once we hit the JPEG photo blob.
+  const parts = [];
+  let start = 0;
+  let photoStartIdx = -1;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] === 0xFF) {
+      // JPEG SOI marker is FF D8 — if the *next* byte is 0xD8, treat the
+      // remainder (from here) as the photo and stop splitting on text.
+      if (data[i + 1] === 0xD8) {
+        photoStartIdx = i;
+        break;
+      }
+      parts.push(data.slice(start, i));
+      start = i + 1;
+    }
+  }
+  if (photoStartIdx === -1) parts.push(data.slice(start));
+
+  const decoder = new TextDecoder('utf-8', { fatal: false });
+  const textParts = parts.map(p => decoder.decode(p).trim());
+
+  const labels = [
+    'email_mobile_flag', 'reference_id', 'name', 'dob', 'gender',
+    'co', 'district', 'landmark', 'house', 'location',
+    'pincode', 'post_office', 'state', 'street', 'sub_district', 'vtc'
+  ];
+
+  const fields = {};
+  labels.forEach((label, i) => {
+    if (textParts[i]) fields[label] = textParts[i];
+  });
+
+  const digits = (fields.reference_id || '').replace(/\D/g, '');
+  if (digits.length >= 4) fields.aadhaar_last4 = digits.slice(-4);
+  fields._has_photo = photoStartIdx !== -1;
+
+  return fields;
+}
+
+// ---------- Rendering ----------
+
+function renderEmpty() {
+  resultBody.innerHTML = '<p class="empty-state">Nothing scanned yet. Hold the QR steady, well lit, and roughly filling a third of the frame.</p>';
+}
+
+function renderError(msg) {
+  resultBody.innerHTML = `<p class="error-text">${escapeHtml(msg)}</p>`;
+}
+
+function maskAadhaar(digitsOnly) {
+  if (!digitsOnly) return 'not available';
+  if (!MASK_AADHAAR) return digitsOnly;
+  return 'XXXX XXXX ' + digitsOnly.slice(-4);
+}
+
+function renderFields(fields, source) {
+  let rows = [];
+
+  if ('uid' in fields) {
+    const uidDigits = (fields.uid || '').replace(/\D/g, '');
+    rows.push(['Aadhaar number', maskAadhaar(uidDigits)]);
+    rows.push(['Name', fields.name || '—']);
+    rows.push(['Gender', fields.gender || '—']);
+    rows.push(['DOB / YOB', fields.dob || fields.yob || '—']);
+    const addr = ['house', 'street', 'lm', 'loc', 'vtc', 'po', 'dist', 'subdist', 'state', 'pc']
+      .map(k => fields[k]).filter(Boolean).join(', ');
+    rows.push(['Address', addr || '—']);
+  } else {
+    rows.push(['Aadhaar number', fields.aadhaar_last4 ? 'XXXX XXXX ' + fields.aadhaar_last4 : 'not present in QR (by design)']);
+    rows.push(['Name', fields.name || '—']);
+    rows.push(['Gender', fields.gender || '—']);
+    rows.push(['DOB', fields.dob || '—']);
+    const addr = ['co', 'house', 'street', 'landmark', 'location', 'vtc', 'post_office', 'sub_district', 'district', 'state', 'pincode']
+      .map(k => fields[k]).filter(Boolean).join(', ');
+    rows.push(['Address', addr || '—']);
+    rows.push(['Photo embedded', fields._has_photo ? 'Yes' : 'No']);
+  }
+
+  const dl = rows.map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`).join('');
+  resultBody.innerHTML = `<dl class="fields">${dl}</dl><span class="source-tag">Source: ${escapeHtml(source)} · scanned ${new Date().toLocaleTimeString()}</span>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// ---------- OCR fallback ----------
+
+async function runOcrOnCurrentFrame() {
+  if (!video.videoWidth) return;
+  ocrBtn.disabled = true;
+  ocrProgress.textContent = 'Running OCR…';
+
+  hiddenCanvas.width = video.videoWidth;
+  hiddenCanvas.height = video.videoHeight;
+  hiddenCtx.drawImage(video, 0, 0, hiddenCanvas.width, hiddenCanvas.height);
+
+  try {
+    const { data: { text } } = await Tesseract.recognize(hiddenCanvas, 'eng', {
+      logger: m => {
+        if (m.status === 'recognizing text') {
+          ocrProgress.textContent = 'OCR ' + Math.round(m.progress * 100) + '%';
+        }
+      }
+    });
+    renderOcrResult(text);
+  } catch (e) {
+    renderError('OCR failed: ' + e.message);
+  } finally {
+    ocrProgress.textContent = '';
+    ocrBtn.disabled = false;
+  }
+}
+
+function renderOcrResult(text) {
+  const uidMatch = text.match(/\b(\d{4}\s?\d{4}\s?\d{4})\b/);
+  const dobMatch = text.match(/\b(\d{2}[/-]\d{2}[/-]\d{4})\b/);
+  let gender = '—';
+  if (/\bfemale\b/i.test(text)) gender = 'F';
+  else if (/\bmale\b/i.test(text)) gender = 'M';
+
+  const uidDigits = uidMatch ? uidMatch[1].replace(/\D/g, '') : '';
+
+  const rows = [
+    ['Aadhaar number', maskAadhaar(uidDigits)],
+    ['DOB', dobMatch ? dobMatch[1] : '—'],
+    ['Gender', gender],
+  ];
+  const dl = rows.map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`).join('');
+  resultBody.innerHTML = `<dl class="fields">${dl}</dl>
+    <span class="source-tag">Source: OCR (best-effort — verify manually)</span>
+    <div class="ocr-raw">${escapeHtml(text.trim() || '(no text detected)')}</div>`;
+}
+</script>
+</body>
+</html>

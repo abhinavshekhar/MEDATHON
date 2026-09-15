@@ -1,0 +1,16 @@
+{
+  "title": "MEDATHON Aadhaar ID PDF Dataset",
+  "description": "Sample demo ID card records for OCR training and PDF generation (Chennai, Tamil Nadu)",
+  "count": 2000,
+  "region": {
+    "country": "India",
+    "state": "Tamil Nadu",
+    "city": "Chennai"
+  },
+  "disclaimer": "SAMPLE DEMO IDs ONLY — not real Aadhaar numbers",
+  "files": {
+    "records": "records.json",
+    "custom": "custom/"
+  },
+  "generatedAt": "2026-09-15T07:00:12.562Z"
+}

@@ -1,0 +1,133 @@
+{
+  "title": "ABDM Profile",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/abdmProfile.php",
+  "legacyPath": "/abdmProfile.php",
+  "headings": [
+    "ABDM Profile Last 2 Hours.",
+    "Shared Profile Details:",
+    "Suggestions:",
+    "No suggested patient's found.",
+    "Link ABHA"
+  ],
+  "searchFields": [
+    {
+      "tag": "input",
+      "type": "email",
+      "name": "",
+      "id": "keyword",
+      "label": "Search By Keyword",
+      "placeholder": "Search By Keyword",
+      "required": false,
+      "options": []
+    },
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "id": "idCounterNumber",
+      "label": "Search By Counter Number",
+      "placeholder": "Search By Counter Number",
+      "required": false,
+      "options": []
+    }
+  ],
+  "formFields": [
+    {
+      "id": "idhealthIDToLink",
+      "label": "Patient ABHA ID",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode",
+      "label": "NDHB-auth-mode",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select"
+      ]
+    },
+    {
+      "id": "NDHM-auth-otp-box",
+      "label": "Enter OTP",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-name",
+      "label": "Enter NDHB registered name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+      "label": "NDHB-auth-mode-DEMOGRAPHICS-gender",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Male",
+        "Female",
+        "Other",
+        "Unknown"
+      ]
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-dob",
+      "label": "Enter Date of Birth",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "NDHB-auth-mode-DEMOGRAPHICS-identifier",
+      "label": "Enter selected identifier details",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    }
+  ],
+  "tables": [
+    {
+      "id": "idNDHBShareProfileListPage",
+      "headers": [
+        "Sr No.",
+        "Name",
+        "ABHA Address",
+        "ABHA ID",
+        "Gender",
+        "Date Of Birth",
+        "Mobile No",
+        "Scanned Time",
+        "Counter No",
+        "Token No",
+        "Match In System",
+        "Actions"
+      ]
+    },
+    {
+      "id": "idNDHBPatientHealthIDToLinkList",
+      "headers": [
+        "#",
+        "ABHA ID",
+        "Linked On",
+        "Linked By"
+      ]
+    },
+    {
+      "id": "",
+      "headers": []
+    }
+  ],
+  "fieldCount": 9,
+  "tableCount": 3
+}

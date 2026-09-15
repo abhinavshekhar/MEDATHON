@@ -1,0 +1,38 @@
+{
+  "title": "Patient Records",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/PatientRecords.php",
+  "legacyPath": "/PatientRecords.php",
+  "headings": [
+    "Search Patient",
+    "Patient List"
+  ],
+  "searchFields": [
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "id": "idPatientSearch",
+      "label": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+      "placeholder": "Search with Patient Name, No, Visit ID, Mobile, Email...",
+      "required": false,
+      "options": []
+    }
+  ],
+  "formFields": [],
+  "tables": [
+    {
+      "id": "idSearchPatientTable",
+      "headers": [
+        "Sr. No.",
+        "Patient Name",
+        "Gender",
+        "Age",
+        "Contact",
+        "Primary Clinic",
+        "Record"
+      ]
+    }
+  ],
+  "fieldCount": 1,
+  "tableCount": 1
+}

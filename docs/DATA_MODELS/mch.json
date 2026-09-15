@@ -1,0 +1,43 @@
+{
+  "$schema": "MCH Registration — extends Patient with OPD/Payment sections",
+  "entity": "MCHRegistration",
+  "extends": "Patient",
+  "additionalSections": {
+    "opdDetails": {
+      "fields": [
+        { "id": "idClinic", "label": "Health Facility", "type": "select", "required": true },
+        { "id": "idModalityType_0", "label": "Modality Type", "type": "select" },
+        { "id": "idOPDType_0", "label": "OPD Type", "type": "select", "required": true },
+        { "id": "idStaff_0", "label": "Doctor", "type": "select", "required": true },
+        { "id": "idFeeStructure", "label": "Fee Structure", "type": "select", "required": true },
+        { "id": "idRoomNo", "label": "Room No", "type": "text" },
+        { "id": "idRecommendedStaff", "label": "Referred By", "type": "select", "required": true },
+        { "id": "idReason", "label": "Reason", "type": "textarea", "required": true }
+      ]
+    },
+    "payment": {
+      "fields": [
+        { "id": "idOPDBillPaymentCollected", "label": "I have collected payment", "type": "checkbox" }
+      ]
+    },
+    "photo": {
+      "fields": [
+        { "id": "patientPhoto", "label": "Patient Photo", "type": "file" }
+      ]
+    }
+  },
+  "queues": {
+    "todaysRegistrations": {
+      "columns": ["Token No", "Time", "Patient", "OPD Type (Modality)", "Doctor", "Payment", "Actions"]
+    },
+    "duplicateSearch": {
+      "columns": ["Sr. No.", "Name", "Patient No", "ABHA IDs", "Mobile", "Age", "Gender", "District", "Block", "Action"]
+    },
+    "roster": {
+      "columns": ["Sr. No", "Doctors"]
+    },
+    "recommendations": {
+      "columns": ["Sr. No.", "Patient", "Study", "Recommendation In", "Rec. By", "Status", "Action"]
+    }
+  }
+}

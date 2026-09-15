@@ -1,0 +1,457 @@
+{
+  "title": "Drug Dispense",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/drugDispensev2.php",
+  "legacyPath": "/drugDispensev2.php",
+  "headings": [
+    "Search Patient",
+    "No Patient Records! Select another patient!",
+    "Total Amount:",
+    "Paid Amount:",
+    "Pending Amount:",
+    "IPD Bill No.:",
+    "Patient Prescriptions",
+    "Email The Bill",
+    "Current Medication",
+    "Patient Active Recommendation(s)",
+    "Direct Dispense",
+    "Direct Dispense"
+  ],
+  "searchFields": [
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "id": "idTokenSearch",
+      "label": "Search Visit No...",
+      "placeholder": "Search Visit No...",
+      "required": false,
+      "options": []
+    }
+  ],
+  "formFields": [
+    {
+      "id": "idPharmacyDepartment",
+      "label": "idPharmacyDepartment",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPatientName",
+      "label": "Patient Name / Patient ID / Visit No. / Mobile No",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPrescriptionDoctorName",
+      "label": "idPrescriptionDoctorName",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idPresumptiveDiagnosisSelect",
+      "label": "idPresumptiveDiagnosisSelect",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Diarrhea",
+        "Dysentery",
+        "Flu / ARI / lnfluenza",
+        "Chickenpox",
+        "Pneumonia",
+        "Measles",
+        "Mumps",
+        "Rubella",
+        "Diphtheria",
+        "Dengue",
+        "Chikungunya",
+        "JE / AES",
+        "Meningitis",
+        "Leptospirosis",
+        "Typhoid",
+        "Dog Bite",
+        "Snake Bite",
+        "Human Rabies",
+        "Hepatitis",
+        "Filaria"
+      ]
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDispenseNotes",
+      "label": "idDispenseNotes",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idItemSuggestionbox",
+      "label": "Add Item",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idItemQuantity",
+      "label": "Quantity",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idSelectBillDiscountByPercentage",
+      "label": "idSelectBillDiscountByPercentage",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDiscountPercentage",
+      "label": "%",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idTotalDiscountAmount",
+      "label": "idTotalDiscountAmount",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idEmailBillTo",
+      "label": "Enter Email ID",
+      "type": "email",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idBillEmailText",
+      "label": "BillBody",
+      "type": "textarea",
+      "tag": "textarea",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientFirstName",
+      "label": "Patient First Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientLastName",
+      "label": "Patient Last Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientMobile",
+      "label": "Mobile",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientGender",
+      "label": "idDirectDispensePatientGender",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select",
+        "Male",
+        "Female"
+      ]
+    },
+    {
+      "id": "idDirectDispensePatientDOB",
+      "label": "Date of Birth (DD-MM-YYYY)",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientAge",
+      "label": "Age (Years)",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientFirstName",
+      "label": "Patient First Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientLastName",
+      "label": "Patient Last Name",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientMobile",
+      "label": "Mobile",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientGender",
+      "label": "idDirectDispensePatientGender",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": [
+        "Select",
+        "Male",
+        "Female"
+      ]
+    },
+    {
+      "id": "idDirectDispensePatientDOB",
+      "label": "Date of Birth (DD-MM-YYYY)",
+      "type": "text",
+      "tag": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "idDirectDispensePatientAge",
+      "label": "Age (Years)",
+      "type": "number",
+      "tag": "input",
+      "required": false,
+      "options": []
+    }
+  ],
+  "tables": [
+    {
+      "id": "",
+      "headers": [
+        "Payment Date",
+        "Paid Amount",
+        "Payment Mode"
+      ]
+    },
+    {
+      "id": "",
+      "headers": [
+        "Sr No",
+        "Schedule Date",
+        "Service Name",
+        "Doctor Name",
+        "Drug Counts",
+        "Dispensed?",
+        "Follow Up Date",
+        "Actions"
+      ]
+    },
+    {
+      "id": "",
+      "headers": [
+        "Sr No",
+        "Brand Name",
+        "Generic Name",
+        "Formulation",
+        "Strength",
+        "Frequency",
+        "Days",
+        "Quantity"
+      ]
+    },
+    {
+      "id": "",
+      "headers": [
+        "Sr. No",
+        "Item Name",
+        "Batch No. | Stock | DOE | Source",
+        "Item Qty ( /Batch(es) Stock [Total Stock])",
+        "Item Rate",
+        "Item Discount",
+        "Discount Amt.",
+        "Dispense",
+        "Instruction / Frequency",
+        "Total"
+      ]
+    },
+    {
+      "id": "idTablePatientCurrentMedication",
+      "headers": [
+        "Drug Name",
+        "Formulation",
+        "Strength",
+        "Frequency",
+        "Start Date",
+        "End Date"
+      ]
+    },
+    {
+      "id": "idTablePatientActiveRecommendations",
+      "headers": [
+        "Sr.No.",
+        "Patient",
+        "Study",
+        "Recommendation In",
+        "Rec. By",
+        "Status"
+      ]
+    }
+  ],
+  "fieldCount": 41,
+  "tableCount": 6
+}

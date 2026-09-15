@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+.next-build/
+out/
+
+# env & secrets
+.env
+.env.local
+.env.*.local
+
+# debug / tooling
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+tsconfig.tsbuildinfo
+
+# IDE
+.cursor/
+.vscode/
+.idea/
+
+# prisma local (keep prisma/dev.db committed for Vercel demo reads)
+# dev.db at repo root — ignore if created locally
+/dev.db
+
+# OS / temp
+*.tmp
+*.swp

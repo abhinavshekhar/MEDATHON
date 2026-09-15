@@ -1,0 +1,108 @@
+{
+  "$schema": "Patient entity — extracted from patientRegistrationOPD.php",
+  "entity": "Patient",
+  "sections": {
+    "patientDetails": {
+      "fields": [
+        { "id": "idPatientFirstName", "label": "First Name", "type": "text", "required": true },
+        { "id": "idPatientMiddleName", "label": "Middle Name", "type": "text", "required": false },
+        { "id": "idPatientLastName", "label": "Last Name", "type": "text", "required": false },
+        { "id": "idPatientAgeY", "label": "Age (Years)", "type": "number", "required": true },
+        { "id": "idPatientAgeM", "label": "Age (Months)", "type": "number", "required": false },
+        { "id": "idPatientAgeD", "label": "Age (Days)", "type": "number", "required": false },
+        { "id": "idPatientDOB", "label": "Date of Birth", "type": "date", "format": "DD-MM-YYYY", "required": false },
+        { "id": "idPatientGender", "label": "Gender", "type": "select", "required": true, "options": ["Male", "Female", "Transgender"] },
+        { "id": "idPatientMaritalStatus", "label": "Marital Status", "type": "select", "options": ["Single", "Married", "Divorced", "Separated", "Widow", "Widower"] },
+        { "id": "idPatientFatherName", "label": "Father / Spouse Name", "type": "text" },
+        { "id": "idPatientANMOLAshaWorker", "label": "ASHA Worker", "type": "text" },
+        { "id": "idPatientBloodGroup", "label": "Blood Group", "type": "select" },
+        { "id": "idPatientReligionCaste", "label": "Religion / Caste", "type": "text" },
+        { "id": "idPatientCategory", "label": "Category", "type": "select" },
+        { "id": "idPatientDeadStatus", "label": "Dead", "type": "checkbox" }
+      ]
+    },
+    "address": {
+      "fields": [
+        { "id": "idPatientCountry", "label": "Country", "type": "select" },
+        { "id": "idPatientState", "label": "State", "type": "select" },
+        { "id": "idPatientDistrict", "label": "District", "type": "select" },
+        { "id": "idPatientBlock", "label": "Block", "type": "select" },
+        { "id": "idPatientWard", "label": "Ward", "type": "text" },
+        { "id": "idPatientVillage", "label": "Village", "type": "select" },
+        { "id": "idPatientPanchayat", "label": "Panchayat", "type": "select" },
+        { "id": "idPatientPostOffice", "label": "Post Office", "type": "text" },
+        { "id": "idPatientPoliceStation", "label": "Police Station", "type": "text" },
+        { "id": "idPatientPinCode", "label": "Pin Code", "type": "text", "validation": "numeric" },
+        { "id": "idPatientAddress", "label": "Address", "type": "textarea" }
+      ]
+    },
+    "communications": {
+      "fields": [
+        { "id": "idPatientEmail", "label": "Email", "type": "email" },
+        { "id": "idPatientMobile", "label": "Mobile", "type": "tel", "validation": "numeric" }
+      ]
+    },
+    "opdDetails": {
+      "fields": [
+        { "id": "idIsMLC", "label": "Is MLC?", "type": "checkbox" },
+        { "id": "idHealthFacility", "label": "Health Facility", "type": "select", "required": true },
+        { "id": "idModalityType", "label": "Modality Type", "type": "select" },
+        { "id": "idOPDType", "label": "OPD Type", "type": "select", "required": true },
+        { "id": "idDoctor", "label": "Doctor", "type": "select", "required": true },
+        { "id": "idFeeStructure", "label": "Fee Structure", "type": "select", "required": true },
+        { "id": "idRoomNo", "label": "Room No", "type": "text" },
+        { "id": "idReferredBy", "label": "Referred By", "type": "select", "required": true },
+        { "id": "idReason", "label": "Reason", "type": "text", "required": true }
+      ]
+    },
+    "payment": {
+      "fields": [
+        { "id": "idPaymentCollected", "label": "I have collected payment", "type": "checkbox", "default": true },
+        { "id": "idTotalFee", "label": "Total Fee", "type": "currency", "currency": "INR" }
+      ]
+    },
+    "identification": {
+      "fields": [
+        { "id": "idAadhaarNo", "label": "Aadhaar No", "type": "text", "masked": true },
+        { "id": "idEPICNo", "label": "EPIC No / Voter ID", "type": "text" },
+        { "id": "idPatientABHAAddress", "label": "ABHA Address", "type": "text", "suffix": "@abdm" }
+      ]
+    },
+    "schemes": {
+      "fields": [
+        { "id": "schemePMJAY", "label": "PMJAY", "type": "checkbox" },
+        { "id": "schemeRBSK", "label": "RBSK", "type": "checkbox" },
+        { "id": "schemeNCBCBAC", "label": "NCD/CBAC", "type": "checkbox" },
+        { "id": "schemeHBNC", "label": "HBNC", "type": "checkbox" },
+        { "id": "schemeBPL", "label": "BPL", "type": "checkbox" },
+        { "id": "schemePMSMA", "label": "PMSMA", "type": "checkbox" },
+        { "id": "schemeFPOT", "label": "FPOT", "type": "checkbox" },
+        { "id": "schemeFP", "label": "FP", "type": "checkbox" },
+        { "id": "schemeHBYC", "label": "HBYC", "type": "checkbox" },
+        { "id": "schemeOthers", "label": "Others", "type": "checkbox" }
+      ]
+    },
+    "mlcDetails": {
+      "conditionalOn": "idIsMLC",
+      "fields": [
+        { "id": "idMLCNo", "label": "MLC No.", "type": "text" },
+        { "id": "idMLCPoliceStation", "label": "Police Station Name", "type": "text" },
+        { "id": "idMLCPSIConstable", "label": "PSI / Constable Name", "type": "text" },
+        { "id": "idMLCFIRDate", "label": "FIR Date", "type": "date" },
+        { "id": "idMLCDateTime", "label": "Date and Time", "type": "datetime" },
+        { "id": "idMLCMRDRegNo", "label": "MRD MLC Registration No.", "type": "text" },
+        { "id": "idMLCCaseType", "label": "Type of Medico Legal Case", "type": "select" },
+        { "id": "idMLCDocument", "label": "Document Upload", "type": "file" },
+        { "id": "idMLCConsentTaken", "label": "Is Consent Taken?", "type": "checkbox" },
+        { "id": "idMLCConsentUpload", "label": "Upload Consent", "type": "file" },
+        { "id": "idMLCSpecialNotes", "label": "Special Notes", "type": "textarea" }
+      ]
+    }
+  },
+  "searchFields": ["patientName", "patientNo", "visitId", "mobile", "email"],
+  "hiddenSystemFields": [
+    "idPatientID", "idHealthIDNumber", "idPatientABHARequestID",
+    "idPatientABHAClinicID", "idPatientABHAAccessToken", "idIsExistingABHA",
+    "iIsNewHealthID", "sProfileShareIDHidden"
+  ]
+}

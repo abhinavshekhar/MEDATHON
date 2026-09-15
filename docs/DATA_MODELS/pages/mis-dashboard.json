@@ -1,0 +1,17 @@
+{
+  "title": "MIS Reports",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/MISDashboard.php",
+  "legacyPath": "/MISDashboard.php",
+  "headings": [
+    "OPD",
+    "Consultation",
+    "Lab",
+    "Pharmacy",
+    "Nursing"
+  ],
+  "searchFields": [],
+  "formFields": [],
+  "tables": [],
+  "fieldCount": 0,
+  "tableCount": 0
+}

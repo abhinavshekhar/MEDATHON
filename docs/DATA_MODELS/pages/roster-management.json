@@ -1,0 +1,50 @@
+{
+  "title": "Roster Management",
+  "url": "https://hims-aphc.bhavyabiharhealth.in/rosterManagement.php",
+  "legacyPath": "/rosterManagement.php",
+  "headings": [
+    "Roster",
+    "Shifts"
+  ],
+  "searchFields": [
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "id": "",
+      "label": "Search Doctors",
+      "placeholder": "Search Doctors",
+      "required": false,
+      "options": []
+    }
+  ],
+  "formFields": [
+    {
+      "id": "idClinic",
+      "label": "clinic_id",
+      "type": "select",
+      "tag": "select",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "",
+      "label": "",
+      "type": "checkbox",
+      "tag": "input",
+      "required": false,
+      "options": []
+    }
+  ],
+  "tables": [
+    {
+      "id": "",
+      "headers": [
+        "Sr. No",
+        "Doctors"
+      ]
+    }
+  ],
+  "fieldCount": 3,
+  "tableCount": 1
+}

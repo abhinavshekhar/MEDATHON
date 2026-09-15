@@ -1,0 +1,42 @@
+{
+  "$schema": "Pharmacy module entities",
+  "entities": {
+    "PharmacyQueue": {
+      "page": "/pharmacyQueue.php",
+      "purpose": "Pending prescriptions awaiting dispensing",
+      "tableColumns": ["Patient No", "Patient Name", "Visit ID", "Doctor", "Prescription Date", "Status", "Actions"]
+    },
+    "DrugDispense": {
+      "page": "/drugDispensev2.php",
+      "fields": [
+        { "name": "patientId", "type": "uuid" },
+        { "name": "visitId", "type": "string" },
+        { "name": "prescriptionId", "type": "string" },
+        { "name": "medicines", "type": "array", "items": "DispensedMedicine" }
+      ]
+    },
+    "DispensedMedicine": {
+      "fields": [
+        { "name": "medicineId", "type": "integer" },
+        { "name": "medicineName", "type": "string" },
+        { "name": "batchNo", "type": "string" },
+        { "name": "expiryDate", "type": "date" },
+        { "name": "quantityPrescribed", "type": "integer" },
+        { "name": "quantityDispensed", "type": "integer" },
+        { "name": "dosage", "type": "string" },
+        { "name": "frequency", "type": "string" },
+        { "name": "duration", "type": "string" },
+        { "name": "instructions", "type": "string" }
+      ]
+    },
+    "DrugDispenseReport": {
+      "page": "/DrugDispenseReportNew.php",
+      "filters": ["dateRange", "medicine", "patient", "doctor"],
+      "exportFormats": ["PDF", "Excel"]
+    },
+    "PharmacyManagement": {
+      "page": "/pharmacyManagementNew.php",
+      "features": ["stock_management", "medicine_catalog", "supplier_management", "reorder_alerts"]
+    }
+  }
+}

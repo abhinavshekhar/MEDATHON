@@ -1,0 +1,108 @@
+{
+  "totalPatients": 2000,
+  "region": "Chennai & Tamil Nadu, India",
+  "byGender": {
+    "MALE": 1040,
+    "FEMALE": 960
+  },
+  "byOpdType": {
+    "General OPD": 508,
+    "MCH": 511,
+    "Pediatric": 494,
+    "Emergency": 487
+  },
+  "byStatus": {
+    "REGISTERED": 502,
+    "IN_QUEUE": 509,
+    "WITH_DOCTOR": 485,
+    "COMPLETED": 504
+  },
+  "schemePMJAY": 1009,
+  "schemeBPL": 791,
+  "schemePMSMA": 281,
+  "chennaiPatients": 1409,
+  "districts": [
+    {
+      "district": "Chennai",
+      "state": "Tamil Nadu",
+      "count": 1409
+    },
+    {
+      "district": "Chengalpattu",
+      "state": "Tamil Nadu",
+      "count": 157
+    },
+    {
+      "district": "Tiruvallur",
+      "state": "Tamil Nadu",
+      "count": 117
+    },
+    {
+      "district": "Kanchipuram",
+      "state": "Tamil Nadu",
+      "count": 103
+    },
+    {
+      "district": "Coimbatore",
+      "state": "Tamil Nadu",
+      "count": 77
+    },
+    {
+      "district": "Madurai",
+      "state": "Tamil Nadu",
+      "count": 55
+    },
+    {
+      "district": "Tiruchirappalli",
+      "state": "Tamil Nadu",
+      "count": 45
+    },
+    {
+      "district": "Salem",
+      "state": "Tamil Nadu",
+      "count": 37
+    }
+  ],
+  "topLocalities": [
+    {
+      "locality": "Egmore",
+      "count": 87
+    },
+    {
+      "locality": "Adyar",
+      "count": 84
+    },
+    {
+      "locality": "Kilpauk",
+      "count": 84
+    },
+    {
+      "locality": "Royapuram",
+      "count": 81
+    },
+    {
+      "locality": "Virugambakkam",
+      "count": 81
+    },
+    {
+      "locality": "Medavakkam",
+      "count": 75
+    },
+    {
+      "locality": "Nungambakkam",
+      "count": 74
+    },
+    {
+      "locality": "Porur",
+      "count": 72
+    },
+    {
+      "locality": "Mylapore",
+      "count": 70
+    },
+    {
+      "locality": "Thoraipakkam",
+      "count": 70
+    }
+  ]
+}
