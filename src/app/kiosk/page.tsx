@@ -74,12 +74,12 @@ export default function KioskTabletPage() {
   const avatarHue = patient ? (patient.ageYears ?? 30) * 3 : 180;
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-5xl flex-col p-6 sm:p-10">
+    <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-5xl flex-col p-6 sm:p-10">
       <header className="mb-8 flex items-center justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">MEDATHON Kiosk</p>
-          <h1 className="mt-1 text-2xl font-semibold sm:text-3xl">Reception Vitals Station</h1>
-          <p className="mt-1 text-sm text-slate-400">Chennai · Tamil Nadu · Scan ABDM QR or enter patient ID</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">Reception station</p>
+          <h1 className="mt-1 text-2xl font-semibold sm:text-3xl">Clinical intake & vitals</h1>
+          <p className="mt-1 text-sm text-slate-400">Scan ABHA QR · capture vitals · sync to physician workspace</p>
         </div>
         <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300">
           <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />

@@ -435,7 +435,7 @@ export async function ModulePage({ config }: { config: ModuleDef }) {
     <div className="mx-auto max-w-7xl space-y-6 animate-slide-up">
       <PageHeader title={config.title} description={config.description} />
       <Card title="Workspace">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm text-brand-700 hover:underline">
+        <Link href="/dashboard" className="inline-flex items-center gap-2 text-sm text-brand-700 hover:underline">
           Return to dashboard <ArrowRight className="h-4 w-4" />
         </Link>
       </Card>

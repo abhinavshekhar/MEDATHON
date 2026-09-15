@@ -4,17 +4,23 @@
 
 @layer base {
   :root {
-    --background: 244 248 251;
-    --foreground: 12 30 43;
+    --background: 248 250 252;
+    --foreground: 15 23 42;
     --sidebar: 7 20 33;
-    --sidebar-fg: 132 150 169;
     --accent: 8 174 227;
+    --radius: 0.75rem;
   }
 
   body {
-    @apply bg-medathon-surface text-[#0f1729] antialiased;
-    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    @apply bg-medathon-surface text-slate-900 antialiased;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   }
 
   * {
@@ -23,8 +29,9 @@
 }
 
 @layer components {
-  .surface-grid { background-image: linear-gradient(rgb(8 174 227 / 0.025) 1px, transparent 1px), linear-gradient(90deg, rgb(8 174 227 / 0.025) 1px, transparent 1px); background-size: 28px 28px; }
-  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-700; }
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-700;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -38,19 +45,16 @@
   @apply rounded-full bg-slate-300;
 }
 
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-.animate-pulse-soft {
-  animation: pulse-soft 2s ease-in-out infinite;
-}
-
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
-

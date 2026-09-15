@@ -72,7 +72,7 @@ export default function PatientAppPage() {
             <Button type="submit" className="w-full" disabled={loading}>{loading ? "Signing in…" : "Sign in"}</Button>
           </form>
           <Link href="/patient-app/register" className="mt-4 block text-center text-sm font-medium text-brand-700">New patient? Register</Link>
-          <Link href="/" className="mt-6 block text-center text-xs text-slate-400">Staff desktop app →</Link>
+          <Link href="/login" className="mt-6 block text-center text-xs text-slate-400">Staff desktop app →</Link>
         </div>
       </div>
     );
