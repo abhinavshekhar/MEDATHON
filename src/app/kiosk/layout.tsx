@@ -8,7 +8,7 @@ export default function KioskLayout({ children }: { children: React.ReactNode })
       <header className="relative z-10 flex items-center justify-between border-b border-white/10 px-6 py-4">
         <Logo variant="light" size="sm" />
         <Link
-          href="/"
+          href="/medikiosk"
           className="text-xs font-medium text-slate-400 transition hover:text-white"
         >
           Exit kiosk

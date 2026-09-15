@@ -102,10 +102,10 @@ export function LandingPage() {
                 Patient app
               </Link>
               <Link
-                href="/dashboard"
+                href="/login"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/5"
               >
-                Staff dashboard
+                Staff login
               </Link>
             </div>
             <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
@@ -240,7 +240,7 @@ export function LandingPage() {
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {[
-                { href: "/dashboard", label: "Staff HIMS", sub: "Registration, records, MIS" },
+                { href: "/login", label: "Staff HIMS", sub: "Registration, records, MIS" },
                 { href: "/kiosk", label: "Reception kiosk", sub: "QR scan + vitals capture" },
                 { href: "/patient-app", label: "Patient mobile", sub: "ABDM card & self-reg" },
                 { href: "/smart-clinic/digital-twin", label: "Digital Twin", sub: "Live vitals monitor" },

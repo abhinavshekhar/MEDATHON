@@ -19,7 +19,7 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
     sessionStorage.setItem("medathon-role", role);
-    setTimeout(() => router.push("/dashboard"), 400);
+    router.push("/");
   }
 
   return (
@@ -38,7 +38,7 @@ export default function LoginPage() {
             Twin. Role-based views keep each team focused.
           </p>
         </div>
-        <p className="text-xs text-slate-500">Demo login — authentication wiring coming soon</p>
+        <p className="text-xs text-slate-500">Demo login — click Continue (no real auth yet)</p>
       </div>
 
       <div className="flex flex-1 flex-col justify-center px-6 py-12 sm:px-12">
@@ -50,7 +50,7 @@ export default function LoginPage() {
             <Lock className="h-5 w-5" />
           </div>
           <h2 className="mt-6 text-2xl font-bold text-slate-900">Sign in to MEDATHON</h2>
-          <p className="mt-2 text-sm text-slate-500">Select your role and enter clinic credentials</p>
+          <p className="mt-2 text-sm text-slate-500">Pick a role and continue to the dashboard</p>
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-5">
             <div>
@@ -72,8 +72,19 @@ export default function LoginPage() {
                 ))}
               </div>
             </div>
-            <Input label="Username" placeholder="staff@clinic.gov.in" required />
-            <Input label="Password" type="password" placeholder="••••••••" required />
+            <Input
+              label="Username"
+              name="username"
+              defaultValue="staff@clinic.gov.in"
+              placeholder="staff@clinic.gov.in"
+            />
+            <Input
+              label="Password"
+              name="password"
+              type="password"
+              defaultValue="demo"
+              placeholder="demo"
+            />
             <Button type="submit" className="w-full" size="lg" disabled={loading}>
               {loading ? "Signing in…" : "Continue to dashboard"}
               <ArrowRight className="h-4 w-4" />
@@ -84,7 +95,7 @@ export default function LoginPage() {
             <Link href="/kiosk" className="block text-brand-700 hover:underline">
               Open reception kiosk →
             </Link>
-            <Link href="/" className="block text-slate-400 hover:text-slate-600">
+            <Link href="/medikiosk" className="block text-slate-400 hover:text-slate-600">
               Back to MediKiosk home
             </Link>
           </div>

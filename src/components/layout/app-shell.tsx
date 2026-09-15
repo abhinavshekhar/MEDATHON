@@ -8,7 +8,7 @@ import { Sidebar } from "./sidebar";
 import { HIMS_MODULES } from "@/types/hims";
 
 const PAGE_TITLES: Record<string, string> = {
-  "/dashboard": "Dashboard",
+  "/": "Dashboard",
   "/opd/registration": "Patient Registration",
   "/patients": "Patient Records",
   "/smart-clinic/digital-twin": "Digital Twin",

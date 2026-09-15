@@ -59,7 +59,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
         )}
       >
         <div className="flex items-center justify-between px-4 py-4">
-          <Link href="/dashboard" onClick={handleNav}>
+          <Link href="/" onClick={handleNav}>
             <Logo variant="light" size="sm" showTagline={false} />
           </Link>
           <button
@@ -73,11 +73,11 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
 
         <nav className="flex-1 overflow-y-auto px-3 pb-4">
           <Link
-            href="/dashboard"
+            href="/"
             onClick={handleNav}
             className={cn(
               "mb-4 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition",
-              pathname === "/dashboard"
+              pathname === "/"
                 ? "bg-white/10 text-white"
                 : "text-medathon-nav-muted hover:bg-white/5 hover:text-slate-200"
             )}
