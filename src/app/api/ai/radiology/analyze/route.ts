@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
       finding,
       regions: parsed?.regions ?? [],
       recommendation: parsed?.recommendation ?? "Clinical correlation recommended.",
-      model: `Gemini Vision (${process.env.GEMINI_MODEL ?? "gemini-2.0-flash"})`,
+      model: `Gemini Vision (${process.env.GEMINI_MODEL ?? "gemini-3.6-flash"})`,
       processing_ms,
       heatmap_available: true,
       heatmap_url: null,

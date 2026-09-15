@@ -118,7 +118,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       task,
       status: "completed",
-      model: process.env.GEMINI_MODEL ?? "gemini-2.0-flash",
+      model: process.env.GEMINI_MODEL ?? "gemini-3.6-flash",
       processing_ms,
       ...(parsed ?? { raw_text: text }),
     });

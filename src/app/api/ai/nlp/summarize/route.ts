@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       visit_id: visitId,
       status: "completed",
-      model: process.env.GEMINI_MODEL ?? "gemini-2.0-flash",
+      model: process.env.GEMINI_MODEL ?? "gemini-3.6-flash",
       processing_ms: Date.now() - start,
       summary,
     });

@@ -94,7 +94,7 @@ Add to `.env`:
 
 ```env
 GEMINI_API_KEY=your-key-from-https://aistudio.google.com/apikey
-GEMINI_MODEL=gemini-2.0-flash
+GEMINI_MODEL=gemini-3.6-flash
 ```
 
 Without a key, demo fallbacks still work for pitch/demo.
