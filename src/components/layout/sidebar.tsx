@@ -6,7 +6,7 @@ import { useState } from "react";
 import {
   Activity, Baby, BarChart3, Bug, Calendar, CheckCircle, ChevronDown,
   FileText, FlaskConical, FolderOpen, Heart, HeartPulse, IdCard,
-  LayoutDashboard, ListOrdered, Package, Pill, Scan, ScanLine, Siren,
+  LayoutDashboard, ListOrdered, MessageSquare, Package, Pill, Scan, ScanLine, Siren,
   UserPlus, Warehouse, X, type LucideIcon,
 } from "lucide-react";
 import { HIMS_MODULES, type ModuleCategory } from "@/types/hims";
@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 const ICONS: Record<string, LucideIcon> = {
   UserPlus, IdCard, FolderOpen, Baby, Heart, Siren, ListOrdered, Pill, Package,
   FlaskConical, CheckCircle, FileText, Bug, Scan, Activity, Warehouse,
-  Calendar, BarChart3, HeartPulse, ScanLine, LayoutDashboard,
+  Calendar, BarChart3, HeartPulse, ScanLine, LayoutDashboard, MessageSquare,
 };
 
 const PRIMARY_CATEGORIES: ModuleCategory[] = ["OPD", "Patient Management", "Pharmacy", "Lab", "Smart Clinic"];

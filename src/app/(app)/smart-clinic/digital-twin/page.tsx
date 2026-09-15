@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Activity, BrainCircuit, Heart, Thermometer, Wifi, WifiOff } from "lucide-react";
+import { Activity, Heart, Thermometer, Wifi, WifiOff } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { AiChatbotPanel } from "@/components/modules/ai-chatbot-panel";
 
 type Vital = { bpm?: number | null; spo2?: number | null; temperature?: number | null; recordedAt?: string };
 
@@ -32,6 +33,7 @@ export default function DigitalTwinPage() {
   const [vitals, setVitals] = useState<Vital[]>([]);
   const [patientId, setPatientId] = useState("");
   const [patientName, setPatientName] = useState("");
+  const [loadedPatientId, setLoadedPatientId] = useState("");
   const [connected, setConnected] = useState(false);
 
   async function loadVitals(id: string) {
@@ -48,6 +50,7 @@ export default function DigitalTwinPage() {
     if (!res.ok) return;
     const p = await res.json();
     setPatientName(p.name);
+    setLoadedPatientId(p.id);
     await loadVitals(p.id);
   }
 
@@ -104,13 +107,14 @@ export default function DigitalTwinPage() {
             <p className="text-sm text-slate-500">Complete vitals at <a href="/kiosk" className="text-brand-700 underline">/kiosk</a> first.</p>
           )}
         </Card>
-        <Card title="AI clinical brief" description="Assistive summary">
-          <div className="rounded-xl bg-brand-50 p-4">
-            <BrainCircuit className="h-5 w-5 text-brand-700" />
-            <p className="mt-3 text-sm font-medium text-slate-800">
-              {patientName ? `${patientName}: vitals within expected range for age. Ready for consultation.` : "Select a patient to generate assistive summary."}
-            </p>
-          </div>
+        <Card title="AI clinical brief" description="Instant Q&A with patient vitals context">
+          <AiChatbotPanel
+            compact
+            patientId={loadedPatientId || undefined}
+            patientName={patientName || undefined}
+            title="Digital Twin Assistant"
+            placeholder={patientName ? `Ask about ${patientName}'s vitals…` : "Load a patient to enable context-aware chat"}
+          />
         </Card>
       </div>
     </div>

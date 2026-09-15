@@ -12,6 +12,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/opd/registration": "Patient Registration",
   "/patients": "Patient Records",
   "/smart-clinic/digital-twin": "Digital Twin",
+  "/smart-clinic/chatbot": "Clinical Assistant",
 };
 
 function resolveTitle(pathname: string) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -44,6 +44,9 @@ export function AadhaarIdWorkspace() {
   const [creating, setCreating] = useState(false);
   const [preview, setPreview] = useState<AadhaarIdRecord | null>(null);
   const [scanned, setScanned] = useState(false);
+  const [scanLoading, setScanLoading] = useState(false);
+  const [ocrFields, setOcrFields] = useState<Partial<AadhaarIdRecord> | null>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
   const [form, setForm] = useState({
     fullName: "",
     dateOfBirth: "",
@@ -88,6 +91,42 @@ export function AadhaarIdWorkspace() {
   function useForScan(record: AadhaarIdRecord) {
     setPreview(record);
     setScanned(true);
+    setOcrFields(null);
+  }
+
+  async function runAiScan(dataUrl: string) {
+    setScanLoading(true);
+    setOcrFields(null);
+    try {
+      const res = await fetch("/api/ai/vision", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ task: "id_card", image_data_url: dataUrl }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setOcrFields({
+          fullName: data.fullName,
+          dateOfBirth: data.dateOfBirth,
+          gender: data.gender,
+          address: data.address,
+          aadhaarMasked: data.aadhaarMasked,
+          district: data.district,
+          state: data.state,
+          pinCode: data.pinCode,
+        });
+        setScanned(true);
+      }
+    } finally {
+      setScanLoading(false);
+    }
+  }
+
+  function onScanFile(file: File | null) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => void runAiScan(reader.result as string);
+    reader.readAsDataURL(file);
   }
 
   return (
@@ -130,28 +169,37 @@ export function AadhaarIdWorkspace() {
           )}
         </Card>
 
-        <Card title="ID scanner" description="Simulate OCR from dataset or camera">
-          <div className="relative mb-4 flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-dashed border-slate-200 bg-slate-950">
+        <Card title="ID scanner" description="Gemini Vision ML OCR from camera or upload">
+          <input ref={fileRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={(e) => onScanFile(e.target.files?.[0] ?? null)} />
+          <div
+            className="relative mb-4 flex aspect-[4/3] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-dashed border-slate-200 bg-slate-950"
+            onClick={() => fileRef.current?.click()}
+          >
             <div className="absolute inset-6 rounded-xl border-2 border-brand-400/60" />
             <Camera className="h-10 w-10 text-slate-500" />
+            <p className="absolute bottom-4 text-xs text-slate-400">Tap to upload ID image for ML OCR</p>
           </div>
-          {scanned && preview ? (
+          {scanLoading && <p className="text-sm text-brand-700">Running Gemini Vision analysis…</p>}
+          {scanned && (ocrFields || preview) ? (
             <div className="space-y-3 text-sm">
-              <Badge variant="success">OCR complete</Badge>
+              <Badge variant="success">{ocrFields ? "ML OCR complete" : "Dataset scan"}</Badge>
               <dl className="space-y-2">
-                <div className="flex justify-between"><dt className="text-slate-500">Name</dt><dd className="font-medium">{preview.fullName}</dd></div>
-                <div className="flex justify-between"><dt className="text-slate-500">DOB</dt><dd>{preview.dateOfBirth}</dd></div>
-                <div className="flex justify-between"><dt className="text-slate-500">Aadhaar</dt><dd className="font-mono">{preview.aadhaarMasked}</dd></div>
+                <div className="flex justify-between"><dt className="text-slate-500">Name</dt><dd className="font-medium">{ocrFields?.fullName ?? preview?.fullName}</dd></div>
+                <div className="flex justify-between"><dt className="text-slate-500">DOB</dt><dd>{ocrFields?.dateOfBirth ?? preview?.dateOfBirth}</dd></div>
+                <div className="flex justify-between"><dt className="text-slate-500">Aadhaar</dt><dd className="font-mono">{ocrFields?.aadhaarMasked ?? preview?.aadhaarMasked}</dd></div>
               </dl>
             </div>
           ) : (
-            <p className="text-sm text-slate-500">Select a record from the dataset below or create a new ID, then click Scan.</p>
+            <p className="text-sm text-slate-500">Upload an ID photo or select a dataset record below.</p>
           )}
-          {preview && (
-            <Button className="mt-4 w-full" variant="secondary" onClick={() => setScanned(true)}>
-              <ScanLine className="h-4 w-4" />Scan selected ID
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Button className="flex-1" variant="secondary" onClick={() => fileRef.current?.click()} disabled={scanLoading}>
+              <ScanLine className="h-4 w-4" />AI scan image
             </Button>
-          )}
+            {preview && (
+              <Button variant="ghost" onClick={() => setScanned(true)}>Use selected record</Button>
+            )}
+          </div>
         </Card>
       </div>
 

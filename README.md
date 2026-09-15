@@ -18,6 +18,7 @@
 | **Kiosk tablet (11″)** | https://medathon-ten.vercel.app/kiosk |
 | **Digital Twin** | https://medathon-ten.vercel.app/smart-clinic/digital-twin |
 | **AI Radiology** | https://medathon-ten.vercel.app/smart-clinic/radiology |
+| **Clinical Assistant (Chatbot)** | https://medathon-ten.vercel.app/smart-clinic/chatbot |
 | **Aadhaar ID PDF** | https://medathon-ten.vercel.app/smart-clinic/id-scanner |
 
 **GitHub:** https://github.com/abhinavshekhar/MEDATHON
@@ -47,7 +48,7 @@ Built in 24 hours as a solo participant:
 |-------|------------|
 | **Web frontend** | Next.js 14, React 18, TypeScript, Tailwind CSS |
 | **Database** | Prisma 5, SQLite (bundled `prisma/dev.db`) |
-| **AI (production)** | Next.js API routes (`/api/ai/*`) on Vercel |
+| **AI (production)** | Gemini Vision + Chat via Next.js API (`GEMINI_API_KEY`) |
 | **AI / IoT (optional)** | FastAPI, WebSockets, uvicorn (`services/ai-api/`) |
 | **Hardware** | ESP32, MAX30102, MLX90614 (`hardware/iot/`) |
 | **Mobile** | Kotlin, Jetpack Compose (`android-app/`) |
@@ -86,6 +87,17 @@ uvicorn main:app --reload --port 8000
 ```
 
 Set `NEXT_PUBLIC_AI_API_URL=http://localhost:8000` in `.env` to use external FastAPI locally.
+
+### Gemini AI (chatbot + image ML)
+
+Add to `.env`:
+
+```env
+GEMINI_API_KEY=your-key-from-https://aistudio.google.com/apikey
+GEMINI_MODEL=gemini-2.0-flash
+```
+
+Without a key, demo fallbacks still work for pitch/demo.
 
 ### Optional — Android app
 

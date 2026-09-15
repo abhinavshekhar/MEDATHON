@@ -169,5 +169,6 @@ export const HIMS_MODULES: NavModule[] = [
   { id: "vitals-kiosk", label: "Vitals Kiosk Monitor", href: "/smart-clinic/kiosk", icon: "HeartPulse", category: "Smart Clinic" },
   { id: "digital-twin", label: "Digital Twin Workspace", href: "/smart-clinic/digital-twin", icon: "Activity", category: "Smart Clinic" },
   { id: "ai-radiology", label: "AI Radiology", href: "/smart-clinic/radiology", icon: "Scan", category: "Smart Clinic" },
+  { id: "ai-chatbot", label: "Clinical Assistant", href: "/smart-clinic/chatbot", icon: "MessageSquare", category: "Smart Clinic" },
   { id: "id-scanner", label: "Aadhaar ID PDF", href: "/smart-clinic/id-scanner", icon: "ScanLine", category: "Smart Clinic" },
 ];

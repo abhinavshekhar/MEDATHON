@@ -35,6 +35,8 @@
     ".next-build/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "medathon-kiosk (1)",
+    "android-app"
   ]
 }
