@@ -1,0 +1,11 @@
+services/
+hardware/
+mobile/
+app/
+gradle/
+patient dataset/
+aadhaar id dataset/
+addhar detector/
+medathon-kiosk (1)/
+*.zip
+*.pptx
